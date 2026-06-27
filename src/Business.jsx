@@ -1,8 +1,8 @@
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
-import businessBanner from "./assets/business/banner.jpg"; // Hero Image
-import smtImg from "./assets/business/smt.jpg";                 // SMT Image
-import miImg from "./assets/business/mi.jpg";                   // MI Image
-import mechImg from "./assets/business/mechanical.jpg";         // Mechanical Image
+import businessBanner from "./assets/Business/banner.jpg"; // Hero Image
+import smtImg from "./assets/Business/smt.jpg";                 // SMT Image
+import miImg from "./assets/Business/mi.jpg";                   // MI Image
+import mechImg from "./assets/Business/mechanical.jpg";         // Mechanical Image
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
