@@ -14,7 +14,6 @@ import slide4 from "./assets/slideshow/4.jpg";
 import slide5 from "./assets/slideshow/5.jpg";
 import slide6 from "./assets/slideshow/6.jpg";
 import mainImg from "./assets/main.jpg";
-import focustekVideo from "./assets/focustek_video.mp4";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
@@ -503,12 +502,9 @@ export default function Home() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             
-            <video 
-              src={focustekVideo} /* Yahan apni video ka naam replace kar lena */
-              controls 
-              autoPlay 
-              style={{ width: "100%", height: "auto", display: "block", maxHeight: "85vh" }}
-            />
+            <div style={{ width: "100%", height: "50vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#000", color: "#fff", fontSize: "1.5rem" }}>
+              Video coming soon...
+            </div>
           </div>
         </div>
       )}
