@@ -7,6 +7,14 @@ import businessImg from "./assets/our_business.jpg";
 import productsImg from "./assets/products_services.jpg"; 
 import machinesImg from "./assets/machine_plants.jpg";
 import qualityImg from "./assets/quality_certificate.jpg";
+import slide1 from "./assets/slideshow/1.jpg";
+import slide2 from "./assets/slideshow/2.jpg";
+import slide3 from "./assets/slideshow/3.jpg";
+import slide4 from "./assets/slideshow/4.jpg";
+import slide5 from "./assets/slideshow/5.jpg";
+import slide6 from "./assets/slideshow/6.jpg";
+import mainImg from "./assets/main.jpg";
+import focustekVideo from "./assets/focustek_video.mp4";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
@@ -22,25 +30,25 @@ const CARDS = [
   {
     title: "Our Business",
     href: "/business",
-    img: businessImg, 
+    src: businessImg, 
     desc: "Electronic PCB Assembly including SMT Production Line, MI Production Line, and Mechanical Production Line.",
   },
   {
     title: "Products & Services",
     href: "/products-services",
-    img: productsImg,
+    src: productsImg,
     desc: "Contract Manufacturing, Turn-Key Assembly, and Machine Trading — end-to-end electronic manufacturing solutions.",
   },
   {
     title: "Machines & Plants",
     href: "/machines-plants",
-    img: machinesImg,
+    src: machinesImg,
     desc: "State-of-the-art SMT Machines, Auto Insertion Units, ICT Rooms, Inspection Tools, and Special Tools.",
   },
   {
     title: "Quality Certificate",
     href: "/company/quality-certificate",
-    img: qualityImg,
+    src: qualityImg,
     desc: "Certified under IATF 16949:2016 and ISO 9001:2015, audited by URS — quality management in letter and spirit.",
   },
 ];
@@ -58,8 +66,8 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const TOTAL_SLIDES = 16;
-  const slideImages = Array.from({ length: TOTAL_SLIDES }, (_, i) => `/src/assets/slideshow/${i + 1}.jpg`);
+  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6];
+  const TOTAL_SLIDES = slideImages.length;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -154,7 +162,7 @@ export default function Home() {
         alignItems: "center",
         paddingTop: 80,     /* 👈 Top padding kam kar di taaki navbar ke theek neeche se shuru ho */
         paddingBottom: 40,  /* 👈 Bottom padding kam kar di taaki stretch na ho */
-        backgroundImage: `linear-gradient(180deg, rgba(5, 12, 26, 0.45) 0%, rgba(0, 44, 108, 0.5) 100%), url('/src/assets/main.jpg')`,
+        backgroundImage: `linear-gradient(180deg, rgba(5, 12, 26, 0.45) 0%, rgba(0, 44, 108, 0.5) 100%), url(${mainImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed"
@@ -368,7 +376,7 @@ export default function Home() {
                       justifyContent: "center"
                     }}>
                       <img 
-                        src={c.img} 
+                        src={c.src} 
                         alt={c.title} 
                         style={{ 
                           width: "100%", 
@@ -496,7 +504,7 @@ export default function Home() {
             </button>
             
             <video 
-              src="/src/assets/focustek_video.mp4" /* Yahan apni video ka naam replace kar lena */
+              src={focustekVideo} /* Yahan apni video ka naam replace kar lena */
               controls 
               autoPlay 
               style={{ width: "100%", height: "auto", display: "block", maxHeight: "85vh" }}

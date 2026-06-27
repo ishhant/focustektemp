@@ -8,6 +8,7 @@ import customersImg from "./assets/customers.jpg";
 import contactImg from "./assets/contact.jpg";
 import careersImg from "./assets/careers.jpg";
 import gstinImg from "./assets/gstin.jpg";
+import fmsImg from "./assets/fms.jpg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
@@ -96,7 +97,7 @@ export default function Company() {
         alignItems: "center",
         paddingTop: 80, 
         paddingBottom: 40,
-        backgroundImage: `linear-gradient(180deg, rgba(5, 12, 26, 0.55) 0%, rgba(0, 44, 108, 0.7) 100%), url('/src/assets/fms.jpg')`,
+        backgroundImage: `linear-gradient(180deg, rgba(5, 12, 26, 0.55) 0%, rgba(0, 44, 108, 0.7) 100%), url(${fmsImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",

@@ -2,28 +2,32 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 import regulationsBg from "./assets/regulations.jpg";
+import apronImg from "./assets/regulations/apron.jpg";
+import capImg from "./assets/regulations/cap.jpg";
+import glovesImg from "./assets/regulations/gloves.jpg";
+import slippersImg from "./assets/regulations/slippers.jpg";
 
 export default function Regulations() {
   const regulations = [
     {
       title: "Anti-Static ESD Safe Apron / Coat",
       desc: "Used for Static Protection across all assembly lines.",
-      img: "/src/assets/regulations/apron.jpg"
+      img: apronImg
     },
     {
       title: "Anti-Static ESD Safe Cap",
       desc: "Mandatory in electronic working zones to prevent contamination.",
-      img: "/src/assets/regulations/cap.jpg"
+      img: capImg
     },
     {
       title: "Anti-Static ESD Safe Gloves",
       desc: "Used in electronic working for the protection of sensitive components.",
-      img: "/src/assets/regulations/gloves.jpg"
+      img: glovesImg
     },
     {
       title: "Anti-Static ESD Safe Slippers",
       desc: "Required footwear for complete Static Protection on the shop floor.",
-      img: "/src/assets/regulations/slippers.jpg"
+      img: slippersImg
     }
   ];
 

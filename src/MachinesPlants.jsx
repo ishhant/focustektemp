@@ -3,52 +3,77 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 
+import printerMachineImg from "./assets/machines/printer_machine.png";
+import spiImg from "./assets/machines/spi.jpg";
+import npmw2Img from "./assets/machines/npmw2.jpg";
+import am100Img from "./assets/machines/am100.jpg";
+import hellerImg from "./assets/machines/heller.jpg";
+import aoiImg from "./assets/machines/aoi.jpg";
+import hanwaImg from "./assets/machines/hanwa.jpg";
+import casioYcm8800Img from "./assets/machines/casio_ycm_8800.jpg";
+import casioYcm7800Img from "./assets/machines/casio_ycm_7800.jpg";
+import xrayImg from "./assets/machines/xray.jpg";
+import testerImg from "./assets/machines/tester.jpg";
+import sequencerImg from "./assets/machines/sequencer.jpg";
+import axialImg from "./assets/machines/axial.jpg";
+import radialImg from "./assets/machines/radial.jpg";
+import universalImg from "./assets/machines/universal.jpg";
+import ict4Img from "./assets/machines/ict4.jpg";
+import ict2Img from "./assets/machines/ict2.jpg";
+import ict3Img from "./assets/machines/ict3.jpg";
+import aoInspImg from "./assets/machines/ao_insp.jpg";
+import viscometerImg from "./assets/machines/viscometer.jpg";
+import digitizerImg from "./assets/machines/digitizer.jpg";
+import hydraulicImg from "./assets/machines/hydraulic.jpg";
+import vgroveImg from "./assets/machines/vgrove.jpg";
+import routerImg from "./assets/machines/router.jpg";
+
 // Data Extracted from Screenshots
 const SMT_PROCESS = [
-  { img: "/src/assets/machines/printer_machine.png", title: "PRINTER MACHINE", desc: "Api-03 NOS" },
-  { img: "/src/assets/machines/spi.jpg", title: "spi", desc: "Api-03 NOS" },
-  { img: "/src/assets/machines/npmw2.jpg", title: "PANASONIC NPM W2", desc: "Component Mounter-02" },
+  { img: printerMachineImg, title: "PRINTER MACHINE", desc: "Api-03 NOS" },
+  { img: spiImg, title: "spi", desc: "Api-03 NOS" },
+  { img: npmw2Img, title: "PANASONIC NPM W2", desc: "Component Mounter-02" },
 
-  { img: "/src/assets/machines/am100.jpg", title: "panasonic am100", desc: "Component Mounter-05" },
-  { img: "/src/assets/machines/heller.jpg", title: "HELLER 1913 EXL/MK-III", desc: "-03 NOS" },
-  { img: "/src/assets/machines/aoi.jpg", title: "aoi", desc: "" },
-  { img: "/src/assets/machines/hanwa.jpg", title: "hanwa", desc: "" },
+  { img: am100Img, title: "panasonic am100", desc: "Component Mounter-05" },
+  { img: hellerImg, title: "HELLER 1913 EXL/MK-III", desc: "-03 NOS" },
+  { img: aoiImg, title: "aoi", desc: "" },
+  { img: hanwaImg, title: "hanwa", desc: "" },
 
   
-  //{ img: "/src/assets/machines/casio_ycm_8800.jpg", title: "CASIO YCM-8800V", desc: "" },
-  //{ img: "/src/assets/machines/casio_ycm_7800.jpg", title: "CASIO YCM-7800", desc: "Component Mounter-05" },
-  { img: "/src/assets/machines/xray.jpg", title: "X-Ray Machine", desc: "-01 NOS" },
-  //{ img: "/src/assets/machines/aoi.jpg", title: "AOI (Miretec AOI 03 Nos)", desc: "" },
-  { img: "/src/assets/machines/tester.jpg", title: "In Circuit Tester", desc: "03 Nos (TSC)" },
+  //{ img: casioYcm8800Img, title: "CASIO YCM-8800V", desc: "" },
+  //{ img: casioYcm7800Img, title: "CASIO YCM-7800", desc: "Component Mounter-05" },
+  { img: xrayImg, title: "X-Ray Machine", desc: "-01 NOS" },
+  //{ img: aoiImg, title: "AOI (Miretec AOI 03 Nos)", desc: "" },
+  { img: testerImg, title: "In Circuit Tester", desc: "03 Nos (TSC)" },
 ];
 
 const AUTO_INSERTION = [
-  { img: "/src/assets/machines/sequencer.jpg", title: "SEQUENCER", desc: "Dynapert UCSM-G" },
-  { img: "/src/assets/machines/axial.jpg", title: "AXIAL", desc: "Dynapert VCD-G" },
-  { img: "/src/assets/machines/radial.jpg", title: "RADIAL", desc: "Pansert RH8" },
-    { img: "/src/assets/machines/universal.jpg", title: "VCD AND SEQUENCER", desc: "" },
+  { img: sequencerImg, title: "SEQUENCER", desc: "Dynapert UCSM-G" },
+  { img: axialImg, title: "AXIAL", desc: "Dynapert VCD-G" },
+  { img: radialImg, title: "RADIAL", desc: "Pansert RH8" },
+    { img: universalImg, title: "VCD AND SEQUENCER", desc: "" },
 
 ];
 
 const ICT_ROOMS = [
-  { img: "/src/assets/machines/ict4.jpg" },
-  { img: "/src/assets/machines/ict2.jpg"},
-  { img: "/src/assets/machines/ict3.jpg"},
+  { img: ict4Img },
+  { img: ict2Img},
+  { img: ict3Img},
 ];
 
 const INSPECTION_TOOLS = [
   { 
-    img: "/src/assets/machines/ao_insp.jpg", 
+    img: aoInspImg, 
     title: "Automatic Optical Inspection", 
     desc: "MIRETECH - 2m/c" 
   },
   { 
-    img: "/src/assets/machines/viscometer.jpg", 
+    img: viscometerImg, 
     title: "VISCOMETER & SPI 2000", 
     desc: "BROOKFIELD Digital Viscometer, Model DV-I+. It measures fluid Viscosity in centipoises. SPI 2000 PARMI 3D Inspection Machine." 
   },
   { 
-    img: "/src/assets/machines/digitizer.jpg", 
+    img: digitizerImg, 
     title: "Digitizer", 
     desc: "Magnification varies from standard to precise limits, providing accurate and thorough inspection capabilities." 
   },
@@ -56,17 +81,17 @@ const INSPECTION_TOOLS = [
 
 const SPECIAL_TOOLS = [
   { 
-    img: "/src/assets/machines/hydraulic.jpg", 
+    img: hydraulicImg, 
     title: "Hydraulic Press", 
     desc: "A hydraulic press is a machine press using a hydraulic cylinder to generate a compressive force." 
   },
   { 
-    img: "/src/assets/machines/vgrove.jpg", 
+    img: vgroveImg, 
     title: "V-Grove Cuting Machine", 
     desc: "De-panelized to get the individual PCB (Used only without perforated or V-Grooved panels)." 
   },
   { 
-    img: "/src/assets/machines/router.jpg", 
+    img: routerImg, 
     title: "Router Machine", 
     desc: "Precision routing and mechanical separation for complex PCB assemblies." 
   },

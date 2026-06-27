@@ -3,38 +3,57 @@ import Footer from "./Footer";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 import customersBg from "./assets/customers.jpg";
 
+import img4w1 from "./assets/customers/4w1.jpg";
+import img4w2 from "./assets/customers/4w2.jpg";
+import img4w3 from "./assets/customers/4w3.jpg";
+import img4w4 from "./assets/customers/4w4.png";
+import img4w5 from "./assets/customers/4w5.jpg";
+import img4w6 from "./assets/customers/4w6.jpg";
+
+import img2w1 from "./assets/customers/2w1.jpg";
+import img2w2 from "./assets/customers/2w2.jpg";
+import img2w3 from "./assets/customers/2w3.jpg";
+import img2w4 from "./assets/customers/2w4.jpg";
+import img2w5 from "./assets/customers/2w5.jpg";
+import img2w6 from "./assets/customers/2w6.jpg";
+import img2w8 from "./assets/customers/2w8.jpg";
+
+import imgCe1 from "./assets/customers/ce1.jpg";
+import imgCe2 from "./assets/customers/ce2.jpg";
+import imgCe3 from "./assets/customers/ce3.jpg";
+
 // You can simply add your image imports here or use the path directly if they are in the public folder.
 // The user specified they will put images in /src/assets/customers/
 const CUSTOMER_DATA = [
   {
     category: "4 Wheelers & Industrial Vehicle",
     images: [
-      "/src/assets/customers/4w1.jpg",
-      "/src/assets/customers/4w2.jpg",
-      "/src/assets/customers/4w3.jpg",
-      "/src/assets/customers/4w4.png",
-      "/src/assets/customers/4w5.jpg",
-      "/src/assets/customers/4w6.jpg",
+      img4w1,
+      img4w2,
+      img4w3,
+      img4w4,
+      img4w5,
+      img4w6,
     ]
   },
   {
     category: "2 Wheelers",
     images: [
-      "/src/assets/customers/2w1.jpg",
-      "/src/assets/customers/2w2.jpg",
-      "/src/assets/customers/2w3.jpg",
-      "/src/assets/customers/2w4.jpg",
-      "/src/assets/customers/2w5.jpg",
-      "/src/assets/customers/2w6.jpg",
-      "/src/assets/customers/2w8.jpg",
+      img2w1,
+      img2w2,
+      img2w3,
+      img2w4,
+      img2w5,
+      img2w6,
+      img2w8,
     ]
   },
   {
     category: "Consumer Electronics",
     images: [
-      "/src/assets/customers/ce1.jpg",
-      "/src/assets/customers/ce2.jpg",
-      "/src/assets/customers/ce3.jpg",
+      imgCe1,
+      imgCe2,
+      imgCe3,
     ]
   }
 ];
