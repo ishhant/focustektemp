@@ -5,21 +5,21 @@ import smtBg from "./assets/smt.jpg";
 import img1 from "./assets/st.jpg";
 
 const TECHNICAL_CAPABILITIES = [
-  { item: "Smallest SMT component", size: "0402 mm (01005 inch)" },
-  { item: "Largest SMT IC component", size: "52 mm x 52 mm, QFP, CSP" },
-  { item: "Thinnest SMT chip component", size: "0.3mm" },
-  { item: "Thinnest PCB board", size: "0.4mm" },
-  { item: "Thickest PCB board", size: "2mm" },
-  { item: "Finest QFB pitch", size: "0.3mm" },
+  { item: "Smallest SMT Component", size: "L- 0.6mm, W- 0.3mm" },
+  { item: "Largest SMT IC Component", size: "L-120mm, W-90mm, L-28mm" },
+  { item: "Thinnest SMT Chip Component", size: "0.1mm" },
+  { item: "Thinnest PCB Board", size: "0.3mm" },
+  { item: "Thickest PCB Board", size: "5mm" },
+  { item: "Finest QFB Pitch", size: "0.3mm" },
   { item: "Materials", size: "FR2, FR4, FR5, FR10" },
-  { item: "PCA Size", size: "Range from 50 x 50 to 750 x 550mm" },
-  { item: "Connector", size: "55mm x 120mm" },
-  { item: "Component height", size: "20mm" },
-  { item: "Component Accuracy", size: "±0.03mm QFP" },
-  { item: "Taping", size: "Tape 8 To 56 mm" },
-  { item: "Tray", size: "Max. 40" },
-  { item: "Stick", size: "Front/Rear – Max. 14" },
-  { item: "Max. Speed", size: "40,000 CPH" },
+  { item: "PCA Size", size: "50x50mm to 750x550mm" },
+  { item: "Connector", size: "L-120mm, W-90mm, L-28mm" },
+  { item: "Component Height", size: "H. max - 28mm" },
+  { item: "Component Accuracy", size: "0.03mm QFP" },
+  { item: "Taping", size: "Tape 8 to 72mm" },
+  { item: "Tray", size: "Max 20" },
+  { item: "Stick", size: "Front Rear max-5" },
+  { item: "Max. Speed", size: "60K CPH" },
 ];
 
 const SMT_CAPACITIES = [
