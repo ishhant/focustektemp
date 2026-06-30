@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <>
       <style>{`
-        /* 👇 FOOTER KI APNI STYLING YAHAN HAI 👇 */
+        
         .logos-wrapper {
           max-width: 1200px;
           margin: 0 auto;
@@ -72,9 +72,7 @@ export default function Footer() {
           }
         }
       `}</style>
-
-      {/* ── CERTIFICATION LOGOS ── */}
-      <section style={{ padding: "50px 24px 50px", background: "transparent" }}>
+<section style={{ padding: "50px 24px 50px", background: "transparent" }}>
         <div className="logos-wrapper">
           <img src={isoLogo} alt="ISO 9001" className="footer-logo" />
           <img src={ursLogo} alt="URS" className="footer-logo" />
@@ -82,9 +80,7 @@ export default function Footer() {
           <img src={msmeLogo} alt="MSME" className="footer-logo" />
         </div>
       </section>
-
-      {/* ── FOOTER ── */}
-      <footer style={{ background: "#051226", padding: "50px 24px 50px", borderTop: "1px solid #e1e6f0" }}>
+<footer style={{ background: "#051226", padding: "50px 24px 50px", borderTop: "1px solid #e1e6f0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
             
@@ -119,7 +115,7 @@ export default function Footer() {
                 {QUICK_LINKS.map(l => (
                   <a key={l.label} href={l.href} className="footer-link">{l.label}</a>
                 ))}
-                <a href="https://forms.gle/LvgymhVn6VhR4vE68" target="_blank" rel="noreferrer" className="footer-link">Write an Inquiry</a>
+                <a href="/contact-us#inquiry-form" className="footer-link">Write an Inquiry</a>
               </div>
             </div>
             

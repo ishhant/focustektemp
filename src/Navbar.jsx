@@ -108,16 +108,12 @@
           transition: "all 0.3s ease",
         }}>
           <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            
-            {/* LOGO (LEFT) */}
-            <div style={{ flex: 1, display: "flex" }}>
+<div style={{ flex: 1, display: "flex" }}>
               <a href="/" style={{ display: "flex", alignItems: "center" }}>
                 <img src={logoImg} alt="FOCUSTEK" style={{ height: "40px", width: "auto" }} />
               </a>
             </div>
-            
-            {/* NAV LINKS (CENTER) */}
-            <div className="hide-mobile" style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "center" }}>
+<div className="hide-mobile" style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "center" }}>
               {NAV_LINKS.map(l => (
                 <a 
                   key={l.label} 
@@ -130,9 +126,7 @@
                 </a>
               ))}
             </div>
-
-            {/* BUTTON & MENU (RIGHT) */}
-            <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 12, justifyContent: "flex-end" }}>
+<div style={{ flex: 1, display: "flex", alignItems: "center", gap: 12, justifyContent: "flex-end" }}>
               <a href="/contact-us" className="btn-primary hide-mobile" style={{ padding: "10px 20px", fontSize: 13 }}>
                 Contact Us
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -153,9 +147,7 @@
 
           </div>
         </nav>
-
-        {/* MOBILE MENU */}
-        {menuOpen && (
+{menuOpen && (
           <div className="mobile-menu">
             {NAV_LINKS.map(l => (
               <a 

@@ -55,14 +55,14 @@ export default function OurHistory() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
-        /* ── TIMELINE SPECIFIC CSS ── */
+        
         .timeline {
           position: relative;
           max-width: 1000px;
           margin: 60px auto 0;
         }
 
-        /* The vertical line */
+        
         .timeline::after {
           content: '';
           position: absolute;
@@ -85,7 +85,7 @@ export default function OurHistory() {
         .timeline-item.left { left: 0; }
         .timeline-item.right { left: 50%; }
 
-        /* The dots on the line */
+        
         .timeline-item::after {
           content: '';
           position: absolute;
@@ -101,7 +101,7 @@ export default function OurHistory() {
         }
         .timeline-item.right::after { left: -11px; }
 
-        /* The Card */
+        
         .timeline-card {
           padding: 28px 32px;
           background: #fff;
@@ -135,7 +135,7 @@ export default function OurHistory() {
           font-size: 15px;
         }
 
-        /* Responsive Timeline */
+        
         @media screen and (max-width: 768px) {
           .timeline::after { left: 31px; }
           .timeline-item { width: 100%; padding-left: 70px; padding-right: 0px; }

@@ -14,7 +14,6 @@ import cert5_2 from "./assets/certificates/5.2.jpg";
 import cert6 from "./assets/certificates/6.jpg";
 import cert7 from "./assets/certificates/7.jpg";
 
-
 function CertificateCard({ cert, onImageClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -113,15 +112,12 @@ export default function QualityCertificate() {
     { id: 6, title: "IPC-A-610 CERTIFICATE", images: [cert1_1] },
     { id: 7, title: "MSME CERTIFICATE", images: [cert5_1,cert5_2] },
 
-
   ];
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <Navbar activePage="Company" />
-
-      {/* Lightbox Overlay */}
-      {lightboxImg && (
+{lightboxImg && (
         <div 
           style={{
             position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh",
@@ -156,9 +152,7 @@ export default function QualityCertificate() {
           </button>
         </div>
       )}
-
-      {/* ── HERO SECTION ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -197,9 +191,7 @@ export default function QualityCertificate() {
           </div>
         </div>
       </section>
-
-      {/* ── INTRO TEXT BLOCK ── */}
-      <section style={{ padding: "50px 24px 20px", background: "transparent", textAlign: "center" }}>
+<section style={{ padding: "50px 24px 20px", background: "transparent", textAlign: "center" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <AnimSection delay={50}>
             <div className="badge">Certifications</div>
@@ -211,9 +203,7 @@ export default function QualityCertificate() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── CERTIFICATES GRID ── */}
-      <section style={{ padding: "30px 24px 80px", background: "transparent" }}>
+<section style={{ padding: "30px 24px 80px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ 
             display: "grid", 

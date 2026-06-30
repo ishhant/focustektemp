@@ -87,9 +87,7 @@ export default function Company() {
         }
       `}</style>
     <Navbar activePage="Company" />
-
-      {/* ── FULL SCREEN HERO SECTION WITH BACKGROUND IMAGE ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -128,9 +126,7 @@ export default function Company() {
           </div>
         </div>
       </section>
-
-      {/* ── COMPANY INTRO TEXT BLOCK ── */}
-      <section style={{ padding: "50px 24px", background: "transparent", textAlign: "center" }}>
+<section style={{ padding: "50px 24px", background: "transparent", textAlign: "center" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">Innovation & Quality</div>
@@ -145,9 +141,7 @@ export default function Company() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── THE 10 CARDS SECTION (GRID) ── */}
-      <section style={{ padding: "0 24px 50px", background: "transparent" }}>
+<section style={{ padding: "0 24px 50px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div 
             className="cards-grid" 

@@ -1,13 +1,7 @@
-/* ══════════════════════════════════════════════════════════
-   FOCUSTEK — SHARED REACT COMPONENTS & HOOKS
-   Import these in any page that needs scroll animations
-   or the floating WhatsApp button.
-   ══════════════════════════════════════════════════════════ */
+
 
 import { useEffect, useRef, useState } from "react";
 
-// ── INTERSECTION OBSERVER HOOK ──
-// Used for scroll-triggered animations
 export function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -24,8 +18,6 @@ export function useInView(threshold = 0.15) {
   return [ref, visible];
 }
 
-// ── ANIMATED SECTION WRAPPER ──
-// Wraps content in a div that fades + slides in on scroll
 export function AnimSection({ children, delay = 0, className = "" }) {
   const [ref, visible] = useInView();
   return (
@@ -43,8 +35,6 @@ export function AnimSection({ children, delay = 0, className = "" }) {
   );
 }
 
-// ── FLOATING WHATSAPP BUTTON ──
-// Renders the fixed-position WhatsApp chat button
 export function WhatsAppButton({ message = "Hello Focustek, I have an inquiry." }) {
   const encodedMsg = encodeURIComponent(message);
   return (

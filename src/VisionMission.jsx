@@ -1,8 +1,6 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { AnimSection, WhatsAppButton } from "./SharedComponents";
-
-// ── BUSINESS MODEL PILLARS ──
+import { AnimSection, WhatsAppButton } from "./SharedComponents";
 const PILLARS = [
   {
     icon: (
@@ -40,9 +38,7 @@ const PILLARS = [
     label: "Growth",
     desc: "Hub of global sourcing, growing together in partnership, serve top class customers.",
   },
-];
-
-// ── MISSION POINTS ──
+];
 const MISSION_POINTS = [
   "Work with customers on Common Goals",
   "Provide Flexibility & Responsiveness",
@@ -56,7 +52,7 @@ export default function VisionMission() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
-        /* Pillar cards */
+        
         .pillar-card {
           background: #fff;
           border-radius: 16px;
@@ -69,7 +65,7 @@ export default function VisionMission() {
         }
         .pillar-card:hover { box-shadow: 0 12px 40px rgba(0,44,108,0.08); transform: translateY(-3px); }
 
-        /* Mission list items */
+        
         .mission-point {
           display: flex;
           align-items: flex-start;
@@ -87,9 +83,7 @@ export default function VisionMission() {
       `}</style>
 
       <Navbar activePage="Company" />
-
-      {/* ── HERO ── */}
-      <section style={{
+<section style={{
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -119,9 +113,7 @@ export default function VisionMission() {
             }}>
               Dedicated to quality, technology, and people — building a globally recognized PCBA supplier with sustained excellence.
             </p>
-
-            {/* Pills */}
-            <div className="hero-animate" style={{ animationDelay: "280ms", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 10, marginTop: 32 }}>
+<div className="hero-animate" style={{ animationDelay: "280ms", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 10, marginTop: 32 }}>
               {["ISO 9001:2015", "IATF 16949:2016", "IPC-A-610", "URS Certified"].map(c => (
                 <span key={c} className="cert-pill" style={{ background: "rgba(5,18,38,0.65)", color: "#fff", borderColor: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)" }}>
                   <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
@@ -135,11 +127,7 @@ export default function VisionMission() {
           </div>
         </div>
       </section>
-
-
-
-      {/* ── FOCUSTEK PHILOSOPHY ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", maxWidth: 900, margin: "0 auto" }}>
@@ -156,9 +144,7 @@ export default function VisionMission() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── BUSINESS MODEL ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -196,14 +182,10 @@ export default function VisionMission() {
           </div>
         </div>
       </section>
-
-      {/* ── VISION & MISSION SPLIT ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, alignItems: "start" }} className="grid-2">
-
-            {/* OUR VISION */}
-            <AnimSection delay={0}>
+<AnimSection delay={0}>
               <div style={{
                 background: "linear-gradient(135deg, #051226 0%, var(--blue) 100%)",
                 borderRadius: 20, padding: "48px 40px", height: "100%",
@@ -222,9 +204,7 @@ export default function VisionMission() {
                 <p style={{ fontSize: 15, color: "rgba(255,255,255,0.8)", lineHeight: 1.8 }}>
                   To become a globally recognized supplier of PCBA. We focus on achieving the customer requirement on time and believe in building a strong work environment with key strategies. Focustek believes that sustained success can only come through people.
                 </p>
-
-                {/* Vision highlight pills */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 28 }}>
+<div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 28 }}>
                   {["Global Recognition", "Customer-First", "People-Led Growth"].map(t => (
                     <span key={t} style={{
                       background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)",
@@ -237,9 +217,7 @@ export default function VisionMission() {
                 </div>
               </div>
             </AnimSection>
-
-            {/* OUR MISSION */}
-            <AnimSection delay={100}>
+<AnimSection delay={100}>
               <div style={{ background: "#fff", border: "1px solid var(--border)", borderRadius: 20, padding: "48px 40px" }}>
                 <div className="badge">Our Mission</div>
                 <h2 className="section-title" style={{ marginBottom: 8 }}>

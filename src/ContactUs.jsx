@@ -1,15 +1,30 @@
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
-import bannerImg from "./assets/contact.jpg"; // Background image ke liye
+import bannerImg from "./assets/contact.jpg";  
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactUs() {
   const [state, handleSubmit] = useForm('xwvdozlw');
+
+  useEffect(() => {
+    if (window.location.hash === '#inquiry-form') {
+      const element = document.getElementById('inquiry-form');
+      if (element) {
+        // Small delay ensures DOM is fully rendered
+        setTimeout(() => {
+          const y = element.getBoundingClientRect().top + window.scrollY - 120;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
-        /* ── PAGE SPECIFIC STYLES ── */
+        
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; align-items: start; }
         
         .contact-card {
@@ -35,7 +50,7 @@ export default function ContactUs() {
           .map-container { aspect-ratio: 1/1; }
         }
 
-        /* ── FORM STYLES ── */
+        
         .inquiry-form {
           background: #fff; border: 1px solid var(--border); border-radius: 16px;
           padding: 32px; box-shadow: 0 10px 30px rgba(0, 44, 108, 0.04);
@@ -52,9 +67,7 @@ export default function ContactUs() {
       `}</style>
 
       <Navbar activePage="Contact Us" />
-
-      {/* ── HERO SECTION ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex", 
         flexDirection: "column", 
@@ -79,15 +92,11 @@ export default function ContactUs() {
           </div>
         </div>
       </section>
-
-      {/* ── CONTACT GRID SECTION ── */}
-      <section style={{ padding: "50px 24px 50px", background: "transparent" }}>
+<section style={{ padding: "50px 24px 50px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection delay={50}>
             <div className="contact-grid">
-            
-            {/* Left Column: Contact Details */}
-            <div>
+<div>
               <h2 className="section-title">Let's Connect</h2>
               <div className="divider" style={{ marginBottom: 20 }}></div>
               <p style={{ fontSize: 16, color: "var(--gray)", lineHeight: 1.6, marginBottom: 40 }}>
@@ -133,8 +142,7 @@ export default function ContactUs() {
                 </div>
               </div>
             </div>
-        {/* Right Column: Direct Inquiry Form */}
-            <div className="inquiry-form">
+<div className="inquiry-form" id="inquiry-form">
               <h3 style={{ fontSize: 24, fontWeight: 800, color: "var(--dark)", marginBottom: 24, fontFamily: "'DM Sans', sans-serif" }}>Send an Inquiry</h3>
               {state.succeeded ? (
                 <div style={{ padding: "40px 20px", textAlign: "center", background: "#f0fdf4", borderRadius: "12px", border: "1px solid #bbf7d0" }}>
@@ -177,8 +185,7 @@ export default function ContactUs() {
             </div>
           </AnimSection>
         </div>
-        {/* ── MAP SECTION (Full Width Bottom) ── */}
-        <AnimSection delay={100}>
+<AnimSection delay={100}>
           <div style={{ marginTop: 80 }}>
             <h2 className="section-title" style={{ textAlign: "center" }}>Find Us on Map</h2>
             <div className="divider-center" style={{ marginBottom: 40 }}></div>
@@ -194,9 +201,7 @@ export default function ContactUs() {
       </section>
 
       <Footer />
-
-      {/* Floating WhatsApp Button */}
-      <WhatsAppButton />
+<WhatsAppButton />
     </div>
   );
 }

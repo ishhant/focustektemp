@@ -34,9 +34,7 @@ export default function Regulations() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <Navbar activePage="Company" />
-
-      {/* ── FULL SCREEN HERO SECTION WITH BACKGROUND IMAGE ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -75,9 +73,7 @@ export default function Regulations() {
           </div>
         </div>
       </section>
-
-      {/* ── INTRO TEXT BLOCK ── */}
-      <section style={{ padding: "50px 24px", background: "transparent", textAlign: "center" }}>
+<section style={{ padding: "50px 24px", background: "transparent", textAlign: "center" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">Safety First</div>
@@ -89,9 +85,7 @@ export default function Regulations() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── THE 4 CARDS SECTION (GRID) ── */}
-      <section style={{ padding: "0 24px 50px", background: "transparent" }}>
+<section style={{ padding: "0 24px 50px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div className="grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: 24 }}>
             {regulations.map((card, idx) => (

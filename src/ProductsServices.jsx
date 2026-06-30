@@ -4,15 +4,15 @@ import Footer from "./Footer";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 
 import bannerImg from "./assets/products_services/banner.jpg"; 
-import contractImg from "./assets/products_services/contract.png";   
+import contractImg from "./assets/products_services/contract.jpg";   
 import turnkeyImg from "./assets/products_services/turnkey.jpg";         
 import tradingImg from "./assets/products_services/machine_trading.jpg"; 
 import CompanyA from "./assets/products_services/slideshow/9.png"; 
-import CompanyB from "./assets/products_services/slideshow/2.png";
-import CompanyC from "./assets/products_services/slideshow/3.png";
-import CompanyD from "./assets/products_services/slideshow/4.png";
-import CompanyE from "./assets/products_services/slideshow/5.png";
-import CompanyF from "./assets/products_services/slideshow/6.png";
+import CompanyB from "./assets/products_services/slideshow/2.jpg";
+import CompanyC from "./assets/products_services/slideshow/3.jpg";
+import CompanyD from "./assets/products_services/slideshow/4.jpg";
+import CompanyE from "./assets/products_services/slideshow/5.jpg";
+import CompanyF from "./assets/products_services/slideshow/6.jpg";
 import turnkey1 from "./assets/products_services/turnkey1.jpg"; 
 import turnkey2 from "./assets/products_services/turnkey2.jpg"; 
 import turnkey3 from "./assets/products_services/turnkey3.jpg"; 
@@ -61,14 +61,10 @@ const SERVICES_DATA = [
   }
 ];
 
-
-
-// 👇 YAHAN SLIDER MEIN ARROWS AUR TEXT KA JAADU HUA HAI 👇
 function ImageSlider({ images, labels, customScale }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAuto, setIsAuto] = useState(true);
 
-  // Auto-play logic
   useEffect(() => {
     if (!images || images.length <= 1 || !isAuto) return;
     const timer = setInterval(() => {
@@ -77,16 +73,15 @@ function ImageSlider({ images, labels, customScale }) {
     return () => clearInterval(timer);
   }, [images, isAuto]);
 
-  // Manual navigation (Arrows)
   const nextSlide = (e) => {
     e.preventDefault();
-    setIsAuto(false); // Manual click karte hi auto-play band
+    setIsAuto(false); 
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = (e) => {
     e.preventDefault();
-    setIsAuto(false); // Manual click karte hi auto-play band
+    setIsAuto(false); 
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
@@ -94,14 +89,11 @@ function ImageSlider({ images, labels, customScale }) {
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden" }}>
-      {/* IMAGES */}
-      <div style={{ display: "flex", transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)", transform: `translateX(-${currentIndex * 100}%)`, height: "100%" }}>
+<div style={{ display: "flex", transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)", transform: `translateX(-${currentIndex * 100}%)`, height: "100%" }}>
         {images.map((img, i) => (
           <div key={i} style={{ minWidth: "100%", height: "100%", position: "relative" }}>
             <img src={img} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transform: customScale ? `scale(${customScale})` : "none" }} alt={`Slide ${i}`} />
-            
-            {/* TEXT LABEL FOR PCBA */}
-            {labels && labels[i] && (
+{labels && labels[i] && (
               <div style={{
                 position: "absolute", bottom: 20, left: "50%", transform: "translateX(-50%)",
                 background: "rgba(5, 18, 38, 0.9)", color: "#fff", padding: "6px 16px",
@@ -114,9 +106,7 @@ function ImageSlider({ images, labels, customScale }) {
           </div>
         ))}
       </div>
-
-      {/* ARROWS */}
-      {images.length > 1 && (
+{images.length > 1 && (
         <>
           <button onClick={prevSlide} style={{
             position: "absolute", top: "50%", left: 10, transform: "translateY(-50%)",
@@ -161,9 +151,7 @@ export default function ProductsServices() {
       `}</style>
       
       <Navbar activePage="Products & Services" />
-
-        {/* ── FULL-SCREEN HERO SECTION ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex", 
         flexDirection: "column",
@@ -191,9 +179,7 @@ export default function ProductsServices() {
           </div>
         </div>
       </section>
-
-      {/* ── MAIN SERVICES SECTION ── */}
-      <section style={{ padding: "100px 24px 100px 24px", background: "transparent" }}>
+<section style={{ padding: "100px 24px 100px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           
           {SERVICES_DATA.map((service, idx) => (
@@ -202,9 +188,7 @@ export default function ProductsServices() {
                 className={`service-row ${service.reverse ? 'reverse-row' : ''}`}
                 style={{ marginBottom: idx === SERVICES_DATA.length - 1 ? "0px" : "50px" }} 
               >
-                
-                {/* Text Column */}
-                <div className="text-col">
+<div className="text-col">
                   <div className="badge">Service 0{idx + 1}</div>
                   <h2 className="section-title" style={{ marginBottom: 16 }}>{service.title}</h2>
                   <div className="divider"></div>
@@ -239,12 +223,9 @@ export default function ProductsServices() {
                     </div>
                   </div>
                 </div>
-
-                {/* Image Column */}
-                <div className="img-col">
+<div className="img-col">
                   <div className="service-img-wrapper">
-                    {/* PASSING LABELS ALONG WITH IMAGES */}
-                    <ImageSlider images={service.images} labels={service.imageLabels} customScale={service.scale} />
+<ImageSlider images={service.images} labels={service.imageLabels} customScale={service.scale} />
                   </div>
                 </div>
 

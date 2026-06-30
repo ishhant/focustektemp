@@ -38,9 +38,7 @@ export default function Business() {
         .footer-link:hover { color: #fff; }
       `}</style>
       <Navbar activePage="Business" />
-
-      {/* ── FULL SCREEN HERO SECTION ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -62,8 +60,8 @@ export default function Business() {
             
             <h1 className="hero-animate" style={{ 
               animationDelay: "80ms", 
-              fontFamily: "'DM Sans', sans-serif", /* Wapas Homepage wala original font */
-              fontSize: "clamp(2.5rem, 5vw, 3.8rem)", /* Size bhi ekdum Homepage jaisa sync kar diya */
+              fontFamily: "'DM Sans', sans-serif", 
+              fontSize: "clamp(2.5rem, 5vw, 3.8rem)", 
               fontWeight: 800, 
               lineHeight: 1.15,
               letterSpacing: "-0.01em", 
@@ -99,10 +97,8 @@ export default function Business() {
           </div>
         </div>
       </section>
-{/* ── PRODUCTION LINES SECTION (CARDS) ── */}
-      <section id="production-lines" style={{ padding: "50px 24px", background: "transparent" }}>
-        {/* Max width thodi kam ki hai (900px) taaki single card bohot zyada lamba na faile */}
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+<section id="production-lines" style={{ padding: "50px 24px", background: "transparent" }}>
+<div style={{ maxWidth: 900, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
               <div className="badge">Manufacturing Units</div>
@@ -115,8 +111,8 @@ export default function Business() {
             className="cards-grid" 
             style={{ 
               display: "grid", 
-              gridTemplateColumns: "1fr", /* Yahan 1fr karne se har row mein sirf 1 card aayega */
-              gap: 40 /* Vertical gap thoda badha diya hai clean look ke liye */
+              gridTemplateColumns: "1fr", 
+              gap: 40 
             }}
           >
             {BUSINESS_LINES.map((card, idx) => (
@@ -129,7 +125,7 @@ export default function Business() {
                       borderRadius: "12px", 
                       overflow: "hidden", 
                       background: "var(--blue-light)", 
-                      marginBottom: 20, /* Exactly home jaisa margin */
+                      marginBottom: 20, 
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center"
@@ -145,17 +141,14 @@ export default function Business() {
                         }} 
                       />
                     </div>
-                    {/* FONT SIZES & WEIGHTS EXACTLY SYNCED WITH HOME/COMPANY CARDS */}
-                    <h3 style={{ fontFamily: "'DM Sans',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "var(--dark)", marginBottom: 10 }}>
+<h3 style={{ fontFamily: "'DM Sans',sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "var(--dark)", marginBottom: 10 }}>
                       {card.title}
                     </h3>
                     <p style={{ fontSize: 14, color: "var(--gray)", lineHeight: 1.65 }}>
                       {card.desc}
                     </p>
                   </div>
-                  
-                  {/* LEARN MORE BUTTON AREA */}
-                  <div style={{ 
+<div style={{ 
                     display: "flex", alignItems: "center", gap: 6, marginTop: 24, 
                     color: "var(--blue)", fontSize: 13, fontWeight: 700 
                   }}>
@@ -171,10 +164,7 @@ export default function Business() {
         </div>
       </section>
             <Footer />
-
-
-      {/* ── FLOATING WHATSAPP BUTTON ── */}
-      <WhatsAppButton />
+<WhatsAppButton />
 
     </div>
   );

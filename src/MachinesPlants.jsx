@@ -1,9 +1,9 @@
-import machinesImg from "./assets/machine_plants.jpg"; // Re-using asset from Home
+import machinesImg from "./assets/machine_plants.jpg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 
-import printerMachineImg from "./assets/machines/printer_machine.png";
+import printerMachineImg from "./assets/machines/printer_machine.jpg";
 import spiImg from "./assets/machines/spi.jpg";
 import npmw2Img from "./assets/machines/npmw2.jpg";
 import am100Img from "./assets/machines/am100.jpg";
@@ -28,7 +28,6 @@ import hydraulicImg from "./assets/machines/hydraulic.jpg";
 import vgroveImg from "./assets/machines/vgrove.jpg";
 import routerImg from "./assets/machines/router.jpg";
 
-// Data Extracted from Screenshots
 const SMT_PROCESS = [
   { img: printerMachineImg, title: "PRINTER MACHINE", desc: "Api-03 NOS" },
   { img: spiImg, title: "spi", desc: "Api-03 NOS" },
@@ -39,11 +38,9 @@ const SMT_PROCESS = [
   { img: aoiImg, title: "aoi", desc: "" },
   { img: hanwaImg, title: "hanwa", desc: "" },
 
-  
-  //{ img: casioYcm8800Img, title: "CASIO YCM-8800V", desc: "" },
-  //{ img: casioYcm7800Img, title: "CASIO YCM-7800", desc: "Component Mounter-05" },
+
   { img: xrayImg, title: "X-Ray Machine", desc: "-01 NOS" },
-  //{ img: aoiImg, title: "AOI (Miretec AOI 03 Nos)", desc: "" },
+
   { img: testerImg, title: "In Circuit Tester", desc: "03 Nos (TSC)" },
 ];
 
@@ -106,9 +103,7 @@ export default function MachinesPlants() {
 
 
       <Navbar activePage="Machines & Plants" />
-
-{/* ── FULL-SCREEN HERO SECTION ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex", 
         flexDirection: "column",
@@ -135,9 +130,7 @@ export default function MachinesPlants() {
           </div>
         </div>
       </section>
-
-      {/* ── SMT PROCESS ── */}
-      <section style={{ padding: "50px 24px 50px", background: "transparent" }}>
+<section style={{ padding: "50px 24px 50px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">Core Capabilities</div>
@@ -167,9 +160,7 @@ export default function MachinesPlants() {
           </div>
         </div>
       </section>
-
-      {/* ── AUTOMATIC INSERTION PROCESS ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">MI Production Line</div>
@@ -202,9 +193,7 @@ export default function MachinesPlants() {
           </div>
         </div>
       </section>
-
-      {/* ── ICT ROOMS ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">Quality Assurance</div>
@@ -246,9 +235,7 @@ export default function MachinesPlants() {
           </div>
         </div>
       </section>
-
-      {/* ── INSPECTION TOOLS ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">Testing & Verification</div>
@@ -281,9 +268,7 @@ export default function MachinesPlants() {
           </div>
         </div>
       </section>
-
-      {/* ── SPECIAL TOOLS ── */}
-      <section style={{ padding: "50px 24px 50px", background: "transparent" }}>
+<section style={{ padding: "50px 24px 50px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">Advanced Machinery</div>

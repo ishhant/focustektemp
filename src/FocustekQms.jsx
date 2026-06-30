@@ -3,9 +3,8 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 
-// ── QMS SECTION IMAGES ──
-// ── QMS SECTION IMAGES from assets/qms ──
-import qmsHeroImg   from "./assets/qms/logo.jpg";       // hero banner (use any wide qms shot)
+
+import qmsHeroImg   from "./assets/qms/logo.jpg";        
 import rawMat1      from "./assets/qms/raw.jpg";
 import igi1         from "./assets/qms/igi1.jpg";
 import igi2         from "./assets/qms/igi2.jpg";
@@ -20,7 +19,6 @@ import fb4          from "./assets/qms/hero.png";
 import fb5          from "./assets/qms/hero.png";
 import fb6          from "./assets/qms/hero.png";
 
-// ── DATA ──
 const QUALITY_TRAITS = [
   "Self-disciplined",
   "Sharing of ideas",
@@ -101,7 +99,6 @@ const QMS_SECTIONS = [
   },
 ];
 
-// ── STAT STRIP DATA ──
 const STATS = [
   { value: "2001", label: "Established" },
   { value: "ISO 9001", label: "Certified" },
@@ -109,7 +106,6 @@ const STATS = [
   { value: "IPC-A-610", label: "Quality Std." },
 ];
 
-// ── CHECK ICON ──
 function CheckIcon({ color = "var(--blue)" }) {
   return (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style={{ flexShrink: 0, marginTop: 2 }}>
@@ -130,7 +126,7 @@ export default function FocustekQMS() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
-        /* ── QMS IMAGE LAYOUTS ── */
+        
         .img-single {
           width: 100%;
           border-radius: 16px;
@@ -179,7 +175,7 @@ export default function FocustekQMS() {
         }
         .img-grid-item:hover img { transform: scale(1.04); }
 
-        /* ── POINT LIST ── */
+        
         .point-item {
           display: flex;
           align-items: flex-start;
@@ -189,7 +185,7 @@ export default function FocustekQMS() {
           line-height: 1.6;
         }
 
-        /* ── QUALITY TRAIT / POLICY CARDS ── */
+        
         .trait-chip {
           display: flex;
           align-items: center;
@@ -205,7 +201,7 @@ export default function FocustekQMS() {
         }
         .trait-chip:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(0,44,108,0.07); }
 
-        /* ── IMAGE LABEL ── */
+        
         .img-label {
           font-size: 12px;
           font-weight: 600;
@@ -215,7 +211,7 @@ export default function FocustekQMS() {
           letter-spacing: 0.01em;
         }
 
-        /* ── BREADCRUMB ── */
+        
         .breadcrumb {
           display: flex;
           align-items: center;
@@ -229,7 +225,7 @@ export default function FocustekQMS() {
         .breadcrumb a { color: rgba(255,255,255,0.75); transition: color 0.2s; }
         .breadcrumb a:hover { color: #fff; }
 
-        /* ── ACCENT SECTION ── */
+        
         .accent-section {
           background: linear-gradient(135deg, #051226 0%, var(--blue) 100%);
           border-radius: 20px;
@@ -244,11 +240,7 @@ export default function FocustekQMS() {
       `}</style>
 
       <Navbar activePage="Company" />
-
-      {/* ══════════════════════════════════════
-          HERO — full-screen, parallax, same as Home
-      ══════════════════════════════════════ */}
-      <section style={{
+<section style={{
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -264,15 +256,10 @@ export default function FocustekQMS() {
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", width: "100%" }}>
           <div style={{ textAlign: "center", maxWidth: 820, margin: "0 auto" }}>
 
-            {/* Badge */}
-
-            {/* Title */}
-            <h1 className="hero-title hero-animate" style={{ animationDelay: "140ms", textShadow: "0 4px 16px rgba(0,0,0,0.4)", marginBottom: 20 }}>
+<h1 className="hero-title hero-animate" style={{ animationDelay: "140ms", textShadow: "0 4px 16px rgba(0,0,0,0.4)", marginBottom: 20 }}>
               Focustek <span style={{ color: "#60a5fa" }}>QMS</span>
             </h1>
-
-            {/* Subtitle */}
-            <p className="hero-animate" style={{
+<p className="hero-animate" style={{
               animationDelay: "200ms",
               fontSize: 18, fontWeight: 500,
               color: "rgba(255,255,255,0.92)",
@@ -282,24 +269,14 @@ export default function FocustekQMS() {
               A well-documented Quality Manual ensures a full understanding of quality aspects at all levels. Product quality is built-in from raw material stage through rigorous control of every operation.
             </p>
 
-            {/* Cert pills */}
-
-            {/* CTA Buttons */}
-
-          </div>
+</div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════
-          FOCUSTEK QUALITY — intro + traits + policy
-      ══════════════════════════════════════ */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "start" }} className="grid-2">
-
-              {/* LEFT — intro + understanding quality */}
-              <div>
+<div>
                 <div className="badge">Focustek Quality</div>
                 <h2 className="section-title">Quality Built-In,<br />Not Inspected In</h2>
                 <div className="divider"></div>
@@ -321,12 +298,8 @@ export default function FocustekQMS() {
                   ))}
                 </div>
               </div>
-
-              {/* RIGHT — customer views + quality policy */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-
-                {/* Customer Views */}
-                <div className="card">
+<div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+<div className="card">
                   <div className="badge">Views to Our Customers</div>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                     {CUSTOMER_VIEWS.map((v, i) => (
@@ -340,9 +313,7 @@ export default function FocustekQMS() {
                     ))}
                   </div>
                 </div>
-
-                {/* Quality Policy */}
-                <div style={{
+<div style={{
                   background: "linear-gradient(135deg, #051226 0%, var(--blue) 100%)",
                   borderRadius: 16, padding: "32px 28px",
                 }}>
@@ -369,11 +340,7 @@ export default function FocustekQMS() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════
-          QMS SECTIONS — Raw Material / IGI / FQA / Feedback
-      ══════════════════════════════════════ */}
-      {QMS_SECTIONS.map((sec, idx) => (
+{QMS_SECTIONS.map((sec, idx) => (
         <section
           key={idx}
           style={{
@@ -383,24 +350,18 @@ export default function FocustekQMS() {
         >
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
             <AnimSection delay={0}>
-
-              {/* Section header */}
-              <div style={{ marginBottom: 40 }}>
+<div style={{ marginBottom: 40 }}>
                 <div className="badge">{sec.badge}</div>
                 <h2 className="section-title" style={{ marginBottom: 8 }}>{sec.title}</h2>
                 <div className="divider"></div>
                 <p style={{ fontSize: 15, color: "var(--gray)", lineHeight: 1.75, maxWidth: 720 }}>{sec.desc}</p>
               </div>
-
-              {/* Points + Images layout */}
-              {sec.imageLayout === "single" && (
+{sec.imageLayout === "single" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
-                  {/* Single image */}
-                  <div className="img-single" style={{ aspectRatio: "21/9" }}>
+<div className="img-single" style={{ aspectRatio: "21/9" }}>
                     <img src={sec.images[0]} alt={sec.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block", transition: "transform 0.4s ease" }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.02)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
                   </div>
-                  {/* Points */}
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
                     {sec.points.map((pt, i) => (
                       <div key={i} className="trait-chip" style={{ alignItems: "flex-start" }}>
                         <div style={{ width: 26, height: 26, borderRadius: 7, background: "var(--blue-light)", color: "var(--blue)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -415,8 +376,7 @@ export default function FocustekQMS() {
 
               {sec.imageLayout === "triple" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
-                  {/* Points row */}
-                  <div style={{
+<div style={{
                     display: "grid",
                     gridTemplateColumns: `repeat(${sec.points.length <= 3 ? sec.points.length : 2}, 1fr)`,
                     gap: 14,
@@ -440,8 +400,7 @@ export default function FocustekQMS() {
                       </div>
                     ))}
                   </div>
-                  {/* Triple images */}
-                  <div className="img-triple">
+<div className="img-triple">
                     {sec.images.map((img, i) => (
                       <div key={i}>
                         <div className="img-triple-item">
@@ -458,8 +417,7 @@ export default function FocustekQMS() {
 
               {sec.imageLayout === "grid" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
-                  {/* Points */}
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
+<div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14 }}>
                     {sec.points.map((pt, i) => (
                       <div key={i} className="trait-chip" style={{ alignItems: "flex-start" }}>
                         <div style={{ width: 26, height: 26, borderRadius: 7, background: "var(--blue-light)", color: "var(--blue)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -469,8 +427,7 @@ export default function FocustekQMS() {
                       </div>
                     ))}
                   </div>
-                  {/* 3×2 image grid */}
-                  <div className="img-grid">
+<div className="img-grid">
                     {sec.images.map((img, i) => (
                       <div key={i} className="img-grid-item">
                         <img src={img} alt={`${sec.title} ${i + 1}`} />
@@ -486,9 +443,7 @@ export default function FocustekQMS() {
       ))}
 
       <Footer />
-
-      {/* ── FLOATING WHATSAPP BUTTON ── */}
-      <WhatsAppButton />
+<WhatsAppButton />
     </div>
   );
 }

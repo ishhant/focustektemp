@@ -35,9 +35,7 @@ export default function MiProduction() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <Navbar activePage="Business" />
-
-      {/* ── HERO BANNER ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -76,9 +74,7 @@ export default function MiProduction() {
           </div>
         </div>
       </section>
-
-      {/* ── KEY METRICS SECTION ── */}
-      <section style={{ padding: "50px 24px", background: "transparent", textAlign: "center" }}>
+<section style={{ padding: "50px 24px", background: "transparent", textAlign: "center" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <AnimSection>
             <div className="badge">High Volume Output</div>
@@ -129,9 +125,7 @@ export default function MiProduction() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── PROCESS TIMELINE ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 56 }}>
@@ -192,9 +186,7 @@ export default function MiProduction() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── CAPACITY & WORK CONDITION ── */}
-      <section style={{ padding: "50px 24px 100px", background: "transparent" }}>
+<section style={{ padding: "50px 24px 100px", background: "transparent" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 56 }}>

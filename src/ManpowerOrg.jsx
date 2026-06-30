@@ -19,7 +19,7 @@ export default function ManpowerOrg() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
-        /* ── STATS SECTION ── */
+        
         .stat-card {
           background: #fff;
           border-radius: 16px;
@@ -47,7 +47,7 @@ export default function ManpowerOrg() {
           color: var(--gray);
         }
 
-        /* ── PERFECT CSS TREE (FIXED CUT-OFF & MOBILE SUPPORT) ── */
+        
         .org-chart-wrapper {
           width: 100%;
           overflow-x: auto;
@@ -92,7 +92,7 @@ export default function ManpowerOrg() {
           padding: 20px 4px 0 4px;
         }
         
-        /* Connectors */
+        
         .tree li::before, .tree li::after {
           content: '';
           position: absolute; top: 0; right: 50%;
@@ -125,7 +125,7 @@ export default function ManpowerOrg() {
           margin-left: -1px;
         }
         
-        /* Node Styling */
+        
         .tree li .node {
           border: 1px solid var(--dark);
           padding: 8px 12px;
@@ -152,9 +152,7 @@ export default function ManpowerOrg() {
           padding: 10px 20px;
         }
       `}</style>
-
-      {/* ── NAVBAR ── */}
-      <Navbar activePage="Company" />
+<Navbar activePage="Company" />
 
       {menuOpen && (
         <div className="mobile-menu">
@@ -164,9 +162,7 @@ export default function ManpowerOrg() {
           <a href="/contact-us" className="btn-primary" style={{ marginTop: 8, justifyContent: "center" }} onClick={() => setMenuOpen(false)}>Get in Touch</a>
         </div>
       )}
-
-      {/* ── HERO SECTION (100VH FULL SCREEN FIXED) ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -194,9 +190,7 @@ export default function ManpowerOrg() {
           </div>
         </div>
       </section>
-
-      {/* ── MANPOWER STATS ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -211,9 +205,7 @@ export default function ManpowerOrg() {
 
         <AnimSection delay={100}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 30 }}>
-            
-            {/* Employee Experience Table */}
-            <div className="stat-card" style={{ padding: "32px", display: "flex", flexDirection: "column" }}>
+<div className="stat-card" style={{ padding: "32px", display: "flex", flexDirection: "column" }}>
               <h3 style={{ fontSize: 22, color: "var(--dark)", marginBottom: 24, fontWeight: 700 }}>Employee Experience</h3>
               <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", flex: 1 }}>
                 <thead>
@@ -254,9 +246,7 @@ export default function ManpowerOrg() {
                 </tbody>
               </table>
             </div>
-
-            {/* Employment Type Table */}
-            <div className="stat-card" style={{ padding: "32px", display: "flex", flexDirection: "column" }}>
+<div className="stat-card" style={{ padding: "32px", display: "flex", flexDirection: "column" }}>
               <h3 style={{ fontSize: 22, color: "var(--dark)", marginBottom: 24, fontWeight: 700 }}>Employment Type</h3>
               <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", flex: 1 }}>
                 <thead>
@@ -294,9 +284,7 @@ export default function ManpowerOrg() {
         </AnimSection>
         </div>
       </section>
-
-      {/* ── ORGANIZATION CHART (NO SCROLL + EXACT DESIGN) ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -307,21 +295,17 @@ export default function ManpowerOrg() {
           </AnimSection>
 
           <AnimSection delay={150}>
-            {/* .org-chart-wrapper has hidden overflow and auto-zoom CSS */}
-            <div className="org-chart-wrapper">
+<div className="org-chart-wrapper">
               <div className="tree">
                 <ul>
                   <li>
-                    {/* MD/CEO BOX */}
-                    <div className="node primary">MD/CEO</div>
+<div className="node primary">MD/CEO</div>
                     <ul>
-                      {/* LEVEL 2 */}
-                      <li><div className="node filled">MARKETING</div></li>
+<li><div className="node filled">MARKETING</div></li>
                       <li>
                         <div className="node filled">OPERATIONS</div>
                         <ul>
-                          {/* LEVEL 3 - OPERATIONS CHILDRENS */}
-                          <li>
+<li>
                             <div className="node">STORES</div>
                             <ul><li><div className="node">DISPATCH</div></li></ul>
                           </li>
@@ -372,12 +356,8 @@ export default function ManpowerOrg() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── FOOTER ── */}
-      <Footer />
-
-      {/* ── FLOATING WHATSAPP BUTTON ── */}
-      <WhatsAppButton message="Hello Focustek, I want to know more." />
+<Footer />
+<WhatsAppButton message="Hello Focustek, I want to know more." />
     </div>
   );
 }

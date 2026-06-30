@@ -7,9 +7,7 @@ export default function Careers() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <Navbar activePage="Company" />
-
-      {/* ── HERO BANNER ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -48,9 +46,7 @@ export default function Careers() {
           </div>
         </div>
       </section>
-
-      {/* ── CAREERS INFO SECTION ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <AnimSection>
             <div className="badge">Join Our Team</div>

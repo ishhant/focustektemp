@@ -22,8 +22,6 @@ import imgCe1 from "./assets/customers/ce1.jpg";
 import imgCe2 from "./assets/customers/ce2.jpg";
 import imgCe3 from "./assets/customers/ce3.jpg";
 
-// You can simply add your image imports here or use the path directly if they are in the public folder.
-// The user specified they will put images in /src/assets/customers/
 const CUSTOMER_DATA = [
   {
     category: "4 Wheelers & Industrial Vehicle",
@@ -62,9 +60,7 @@ export default function Customers() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <Navbar activePage="Company" />
-
-      {/* ── FULL SCREEN HERO SECTION WITH BACKGROUND IMAGE ── */}
-      <section style={{ 
+<section style={{ 
         minHeight: "100vh", 
         display: "flex",
         flexDirection: "column",
@@ -103,9 +99,7 @@ export default function Customers() {
           </div>
         </div>
       </section>
-
-      {/* ── CUSTOMER CATEGORIES SECTION ── */}
-      <section style={{ padding: "50px 24px 50px", background: "transparent" }}>
+<section style={{ padding: "50px 24px 50px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 64 }}>
@@ -132,9 +126,7 @@ export default function Customers() {
                     {group.category}
                   </h3>
                   <div className="divider-center" style={{ marginBottom: 32 }}></div>
-                  
-                  {/* Logo Grid */}
-                  <div style={{ 
+<div style={{ 
                     display: "grid", 
                     gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", 
                     gap: 24 
@@ -176,7 +168,7 @@ export default function Customers() {
                           onMouseEnter={e => e.currentTarget.style.filter = "grayscale(0%)"}
                           onMouseLeave={e => e.currentTarget.style.filter = "grayscale(10%)"}
                           onError={(e) => {
-                            // Fallback if image doesn't exist yet
+
                             e.target.style.display = "none";
                             e.target.parentNode.innerHTML += `<span style="color:var(--gray);font-size:0.85rem;font-weight:600;">Logo Pending</span>`;
                           }}

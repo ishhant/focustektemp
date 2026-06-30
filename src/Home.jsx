@@ -13,6 +13,15 @@ import slide3 from "./assets/slideshow/3.jpg";
 import slide4 from "./assets/slideshow/4.jpg";
 import slide5 from "./assets/slideshow/5.jpg";
 import slide6 from "./assets/slideshow/6.jpg";
+import slide7 from "./assets/slideshow/7.jpg";
+import slide8 from "./assets/slideshow/8.jpg";
+import slide9 from "./assets/slideshow/9.jpg";
+import slide10 from "./assets/slideshow/10.jpg";
+import slide11 from "./assets/slideshow/11.jpg";
+import slide12 from "./assets/slideshow/12.jpg";
+import slide13 from "./assets/slideshow/13.jpg";
+import slide14 from "./assets/slideshow/14.jpg";
+import slide15 from "./assets/slideshow/15.jpg";
 import mainImg from "./assets/main.jpg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -64,8 +73,9 @@ const QUICK_LINKS = [
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6];
+  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11, slide12, slide13, slide14, slide15];
   const TOTAL_SLIDES = slideImages.length;
 
   useEffect(() => {
@@ -75,14 +85,28 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % TOTAL_SLIDES);
-    }, 4500); // Har 4.5 second mein photo automatic badlegi
+    let timer;
+    if (isAutoPlay) {
+      timer = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % TOTAL_SLIDES);
+      }, 4500); 
+    }
     return () => clearInterval(timer);
-  }, []);
+  }, [isAutoPlay, TOTAL_SLIDES]);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % TOTAL_SLIDES);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
+  const handleInteraction = () => {
+    setIsAutoPlay(false);
+  };
+
+  const nextSlide = () => {
+    handleInteraction();
+    setCurrentSlide((prev) => (prev + 1) % TOTAL_SLIDES);
+  };
+  
+  const prevSlide = () => {
+    handleInteraction();
+    setCurrentSlide((prev) => (prev - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
+  };
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
@@ -154,13 +178,13 @@ export default function Home() {
       `}</style>
       <Navbar activePage="Home" />
       <section style={{ 
-        minHeight: "100vh", /* 👈 Exact full screen ki height */
-        display: "flex",    /* 👈 Content ko center karne ke liye flexbox */
+        minHeight: "100vh", 
+        display: "flex",    
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: 80,     /* 👈 Top padding kam kar di taaki navbar ke theek neeche se shuru ho */
-        paddingBottom: 40,  /* 👈 Bottom padding kam kar di taaki stretch na ho */
+        paddingTop: 80,     
+        paddingBottom: 40,  
         backgroundImage: `linear-gradient(180deg, rgba(5, 12, 26, 0.45) 0%, rgba(0, 44, 108, 0.5) 100%), url(${mainImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -191,9 +215,7 @@ export default function Home() {
                 </span>
               ))}
             </div>
-
-            {/* 👇 YAHAN HAIN AAPKE TEENO BUTTONS JO GAYAB HO GAYE THE 👇 */}
-            <div className="hero-animate hero-btns" style={{ animationDelay: "320ms", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16, marginTop: 40 }}>
+<div className="hero-animate hero-btns" style={{ animationDelay: "320ms", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16, marginTop: 40 }}>
               
               <button onClick={() => setIsVideoOpen(true)} className="btn-primary" style={{ background: "#fff", color: "var(--blue)", boxShadow: "0 4px 16px rgba(255,255,255,0.25)" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -205,7 +227,7 @@ export default function Home() {
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
 
-              <a href="https://forms.gle/LvgymhVn6VhR4vE68" target="_blank" rel="noreferrer" className="btn-outline" style={{ color: "#fff", borderColor: "#fff", background: "rgba(255,255,255,0.05)", backdropFilter: "blur(4px)" }}>
+              <a href="/contact-us#inquiry-form" className="btn-outline" style={{ color: "#fff", borderColor: "#fff", background: "rgba(255,255,255,0.05)", backdropFilter: "blur(4px)" }}>
                 Write an Inquiry
               </a>
               
@@ -213,13 +235,10 @@ export default function Home() {
             
           </div>
         </div>
-      </section>    
-      {/* ── FIXED SLIDESHOW BLOCK WITH ZERO OVERLAP ISSUES ── */}
-      <section className="main-slideshow-block" style={{ position: "relative", zIndex: 5 }}>
+      </section>
+<section className="main-slideshow-block" style={{ position: "relative", zIndex: 5 }}>
         <div className="slider-wrapper">
-          
-          {/* Images Track */}
-          <div className="slide-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+<div className="slide-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {slideImages.map((src, index) => (
               <div className="slide-item" key={index}>
                 <img 
@@ -231,26 +250,23 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Left Arrow Button */}
-          <button className="slider-btn" style={{ left: 24, zIndex: 10 }} onClick={prevSlide} aria-label="Previous slide">
+<button className="slider-btn" style={{ left: 24, zIndex: 10 }} onClick={prevSlide} aria-label="Previous slide">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
-
-          {/* Right Arrow Button */}
-          <button className="slider-btn" style={{ right: 24, zIndex: 10 }} onClick={nextSlide} aria-label="Next slide">
+<button className="slider-btn" style={{ right: 24, zIndex: 10 }} onClick={nextSlide} aria-label="Next slide">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           </button>
-
-          {/* Bottom Dot Nav Indicators */}
-          <div style={{
+<div style={{
             position: "absolute", bottom: 20, left: "50%", transform: "translateX(-50%)",
             display: "flex", gap: 6, zIndex: 10, background: "rgba(5, 18, 38, 0.4)", padding: "6px 14px", borderRadius: 20, backdropFilter: "blur(6px)"
           }}>
             {slideImages.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentSlide(index)}
+                onClick={() => {
+                  handleInteraction();
+                  setCurrentSlide(index);
+                }}
                 className="indicator-dot"
                 style={{
                   width: currentSlide === index ? 20 : 6,
@@ -263,9 +279,7 @@ export default function Home() {
 
         </div>
       </section>
-
-      {/* ── STATS STRIP ── */}
-      <section style={{ background: "var(--blue)", padding: "50px 24px" }}>
+<section style={{ background: "var(--blue)", padding: "50px 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="grid-4">
           {STATS.map((s, i) => (
             <div key={i} style={{ textAlign: "center" }}>
@@ -275,9 +289,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* ── ABOUT STRIP ── */}
-        <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }} className="grid-2">
@@ -346,9 +358,7 @@ export default function Home() {
           </AnimSection>
         </div>
       </section>
-
-      {/* ── SERVICES CARDS ── */}
-      <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -406,9 +416,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── CONTACT CTA ── */}
-        <section style={{ padding: "50px 24px", background: "transparent" }}>
+<section style={{ padding: "50px 24px", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <AnimSection>
             <div style={{
@@ -442,7 +450,7 @@ export default function Home() {
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12, minWidth: 200 }}>
-                <a href="https://forms.gle/LvgymhVn6VhR4vE68" target="_blank" rel="noreferrer" style={{
+                <a href="/contact-us#inquiry-form" style={{
                   background: "var(--accent)", color: "#fff", fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 700, fontSize: 14, padding: "16px 24px", borderRadius: 10,
                   textAlign: "center", display: "block", transition: "opacity 0.2s",
@@ -464,30 +472,28 @@ export default function Home() {
       </section>
       <Footer />
       <WhatsAppButton />
-    {/* ── VIDEO POPUP MODAL ── */}
-      {isVideoOpen && (
+{isVideoOpen && (
         <div 
-          onClick={() => setIsVideoOpen(false)} // Background click karne par band ho jayega
+          onClick={() => setIsVideoOpen(false)}
           style={{
             position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
-            background: "rgba(0, 10, 25, 0.85)", // Dark premium overlay
+            background: "rgba(0, 10, 25, 0.85)", 
             backdropFilter: "blur(8px)",
             zIndex: 9999, 
             display: "flex", alignItems: "center", justifyContent: "center",
             padding: 24,
-            animation: "fadeIn 0.3s ease" // Smooth entry
+            animation: "fadeIn 0.3s ease" 
           }}
         >
           <div 
-            onClick={(e) => e.stopPropagation()} // Video area click karne par band nahi hoga
+            onClick={(e) => e.stopPropagation()}  
             style={{ 
               position: "relative", width: "100%", maxWidth: 1000, 
               background: "#000", borderRadius: 16, overflow: "hidden", 
               boxShadow: "0 20px 50px rgba(0,0,0,0.5)" 
             }}
           >
-            {/* Cross (Close) Button */}
-            <button 
+<button 
               onClick={() => setIsVideoOpen(false)}
               style={{
                 position: "absolute", top: 16, right: 16, zIndex: 10,
