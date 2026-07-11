@@ -15,6 +15,8 @@ import slide5 from "./assets/slideshow/5.jpg";
 import slide6 from "./assets/slideshow/6.jpg";
 import slide7 from "./assets/slideshow/7.jpg";
 import slide8 from "./assets/slideshow/8.jpg";
+import slide8a from "./assets/st.jpg";
+import slide8b from "./assets/slideshow/8b.jpg";
 import slide9 from "./assets/slideshow/9.jpg";
 import slide10 from "./assets/slideshow/10.jpg";
 import slide11 from "./assets/slideshow/11.jpg";
@@ -22,6 +24,8 @@ import slide12 from "./assets/slideshow/12.jpg";
 import slide13 from "./assets/slideshow/13.jpg";
 import slide14 from "./assets/slideshow/14.jpg";
 import slide15 from "./assets/slideshow/15.jpg";
+import slide16 from "./assets/slideshow/16.jpg";
+
 import mainImg from "./assets/main.jpg";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -62,10 +66,10 @@ const CARDS = [
 ];
 
 const QUICK_LINKS = [
-  { label: "Focustek QMS", href: "/company/focustek-qms", img: qmsImg },
-  { label: "Vision & Mission", href: "/company/vision-mission", img: visionImg },
-  { label: "Our Customers", href: "/company/our-customers", img: customersImg },
-  { label: "Manpower & Org Charts", href: "/company/manpower-organization-charts", img: orgImg },
+  { label: <>Focustek<br className="mobile-break" /> QMS</>, alt: "Focustek QMS", href: "/company/focustek-qms", img: qmsImg },
+  { label: <>Vision &<br className="mobile-break" /> Mission</>, alt: "Vision & Mission", href: "/company/vision-mission", img: visionImg },
+  { label: <>Our<br className="mobile-break" /> Customers</>, alt: "Our Customers", href: "/company/our-customers", img: customersImg },
+  { label: <>Manpower &<br className="mobile-break" /> Org Charts</>, alt: "Manpower & Org Charts", href: "/company/manpower-organization-charts", img: orgImg },
 ];
 
 
@@ -75,7 +79,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11, slide12, slide13, slide14, slide15];
+  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide8a, slide8b, slide9, slide10, slide11, slide12, slide13, slide14, slide15, slide16];
   const TOTAL_SLIDES = slideImages.length;
 
   useEffect(() => {
@@ -111,6 +115,17 @@ export default function Home() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
+        @media (min-width: 769px) {
+          .mobile-break { display: none; }
+          .desktop-break { display: block; }
+          .quick-link-label { white-space: nowrap !important; font-size: clamp(12.5px, 1.2vw, 15px) !important; }
+        }
+        @media (max-width: 768px) {
+          .mobile-break { display: block; }
+          .desktop-break { display: none; }
+          .quick-link-label { white-space: normal !important; text-align: left; line-height: 1.3; }
+        }
+        
         .main-slideshow-block {
           width: 100%;
           max-width: 1200px;
@@ -126,6 +141,17 @@ export default function Home() {
           box-shadow: 0 30px 70px rgba(0, 44, 108, 0.12);
           background: #051226;
           z-index: 1; 
+        }
+        @media (max-width: 992px) {
+          .slider-wrapper {
+            height: 400px;
+          }
+        }
+        @media (max-width: 768px) {
+          .slider-wrapper {
+            height: 260px;
+            border-radius: 16px;
+          }
         }
         .slide-track {
           display: flex;
@@ -199,8 +225,10 @@ export default function Home() {
             </div>
             
             <h1 className="hero-title hero-animate" style={{ animationDelay: "80ms", textShadow: "0 4px 16px rgba(0, 0, 0, 0.4)" }}>
-              Electronic PCB <span style={{ color: "#60a5fa" }}>Assembly</span><br />
-              & EMS Manufacturing
+              Electronic PCB <br className="mobile-break" />
+              <span style={{ color: "#60a5fa" }}>Assembly</span> <br className="desktop-break" />
+              & EMS <br className="mobile-break" />
+              Manufacturing
             </h1>
             
             <p className="hero-animate" style={{ animationDelay: "160ms", fontSize: 18, fontWeight: 500, color: "rgba(255, 255, 255, 0.95)", lineHeight: 1.6, marginTop: 20, maxWidth: 720, margin: "20px auto 0", textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)" }}>
@@ -282,9 +310,9 @@ export default function Home() {
 <section style={{ background: "var(--blue)", padding: "50px 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="grid-4">
           {STATS.map((s, i) => (
-            <div key={i} style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: "'DM Sans',sans-serif", fontWeight: 800, fontSize: "2rem", color: "#fff" }}>{s.value}</div>
-              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", fontWeight: 500, marginTop: 2 }}>{s.label}</div>
+            <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
+              <div style={{ fontFamily: "'DM Sans',sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem, 5vw, 2rem)", color: "#fff", whiteSpace: "nowrap" }}>{s.value}</div>
+              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", fontWeight: 500, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
@@ -335,7 +363,7 @@ export default function Home() {
                     }}>
                       <img 
                         src={q.img} 
-                        alt={q.label} 
+                        alt={q.alt} 
                         style={{ 
                           width: "100%", 
                           height: "100%", 
@@ -346,7 +374,7 @@ export default function Home() {
                     </div>
                     
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", padding: "0 4px" }}>
-                      <span style={{ fontSize: 15, fontWeight: 700, color: "var(--dark)" }}>{q.label}</span>
+                      <span className="quick-link-label" style={{ fontSize: 15, fontWeight: 700, color: "var(--dark)" }}>{q.label}</span>
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ color: "var(--accent)", flexShrink: 0 }}>
                         <path d="M3 9h12M9 3l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -508,8 +536,16 @@ export default function Home() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             
-            <div style={{ width: "100%", height: "50vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#000", color: "#fff", fontSize: "1.5rem" }}>
-              Video coming soon...
+            <div style={{ width: "100%", background: "#000", display: "flex", justifyContent: "center" }}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1209006092?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                  width="100%" 
+                  style={{ aspectRatio: "16/9", maxWidth: "1280px" }}
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  title="Focustek_video"
+                ></iframe>
             </div>
           </div>
         </div>

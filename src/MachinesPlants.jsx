@@ -21,27 +21,34 @@ import universalImg from "./assets/machines/universal.jpg";
 import ict4Img from "./assets/machines/ict4.jpg";
 import ict2Img from "./assets/machines/ict2.jpg";
 import ict3Img from "./assets/machines/ict3.jpg";
-import aoInspImg from "./assets/machines/ao_insp.jpg";
-import viscometerImg from "./assets/machines/viscometer.jpg";
+import aoInspImg from "./assets/machines/aoi.jpeg";
+import viscometerImg from "./assets/machines/visco.jpeg";
 import digitizerImg from "./assets/machines/digitizer.jpg";
 import hydraulicImg from "./assets/machines/hydraulic.jpg";
 import vgroveImg from "./assets/machines/vgrove.jpg";
 import routerImg from "./assets/machines/router.jpg";
+import stencilImg from "./assets/machines/stencil.jpeg";
+import laserImg from "./assets/machines/laser.jpg";
+import xrayCountingImg from "./assets/machines/xraycounting.jpeg";
+import reflowImg from "./assets/machines/reflow.jpg";
+import waveImg from "./assets/machines/wave.jpeg";
+import o2Img from "./assets/machines/o2.jpeg";
+import noncontactImg from "./assets/machines/3dm.jpg";
+import dustmeterImg from "./assets/machines/dustmeter.jpg";
+
+
+
 
 const SMT_PROCESS = [
-  { img: printerMachineImg, title: "PRINTER MACHINE", desc: "Api-03 NOS" },
-  { img: spiImg, title: "spi", desc: "Api-03 NOS" },
-  { img: npmw2Img, title: "PANASONIC NPM W2", desc: "Component Mounter-02" },
-
-  { img: am100Img, title: "panasonic am100", desc: "Component Mounter-05" },
-  { img: hellerImg, title: "HELLER 1913 EXL/MK-III", desc: "-03 NOS" },
-  { img: aoiImg, title: "aoi", desc: "" },
-  { img: hanwaImg, title: "hanwa", desc: "" },
-
-
-  { img: xrayImg, title: "X-Ray Machine", desc: "-01 NOS" },
-
-  { img: testerImg, title: "In Circuit Tester", desc: "03 Nos (TSC)" },
+  { img: printerMachineImg, title: "PANASONIC SPG/NM-EJ6A PRINTER" },
+  { img: spiImg, title: "KOHYOUNG KY8030-2  SPI" },
+  { img: npmw2Img, title: "PANASONIC NPM W2" },
+  { img: am100Img, title: "PANASONIC  NM-EJM4D /AM100 MOUNTER" },
+  { img: hellerImg, title: "HELLER 1910MKV-DL REFLOW" },
+  { img: aoiImg, title: "KOHYOUNG ZENITH  INLINE 3D AOI" },
+  { img: hanwaImg, title: "HANAWHA SM-482" },
+  { img: xrayImg, title: "XAVIS X-ray Xscan-A100R" },
+  { img: testerImg, title: "IN CIRCUIT TESTER  ST623F" },
 ];
 
 const AUTO_INSERTION = [
@@ -61,18 +68,28 @@ const ICT_ROOMS = [
 const INSPECTION_TOOLS = [
   { 
     img: aoInspImg, 
-    title: "Automatic Optical Inspection", 
-    desc: "MIRETECH - 2m/c" 
+    title: "KOYHOUNG ZENITH 3D AOI", 
+    desc: "" 
   },
   { 
     img: viscometerImg, 
-    title: "VISCOMETER & SPI 2000", 
-    desc: "BROOKFIELD Digital Viscometer, Model DV-I+. It measures fluid Viscosity in centipoises. SPI 2000 PARMI 3D Inspection Machine." 
+    title: "MALCOM PM-2A VISCOMETER ", 
+    desc: "" 
   },
   { 
     img: digitizerImg, 
-    title: "Digitizer", 
-    desc: "Magnification varies from standard to precise limits, providing accurate and thorough inspection capabilities." 
+    title: "FUJI DT III Digitizer", 
+    desc: "" 
+  },
+  { 
+    img: waveImg, 
+    title: "WAVE CHECKER", 
+    desc: "" 
+  },
+  { 
+    img: o2Img, 
+    title: "O2 PROFILER", 
+    desc: "" 
   },
 ];
 
@@ -80,18 +97,40 @@ const SPECIAL_TOOLS = [
   { 
     img: hydraulicImg, 
     title: "Hydraulic Press", 
-    desc: "A hydraulic press is a machine press using a hydraulic cylinder to generate a compressive force." 
-  },
-  { 
-    img: vgroveImg, 
-    title: "V-Grove Cuting Machine", 
-    desc: "De-panelized to get the individual PCB (Used only without perforated or V-Grooved panels)." 
+    desc: "" 
   },
   { 
     img: routerImg, 
     title: "Router Machine", 
-    desc: "Precision routing and mechanical separation for complex PCB assemblies." 
+    desc: "" 
   },
+  { 
+    img: stencilImg, 
+    title: "STENCIL CLEANER",
+  },
+  { 
+    img: laserImg, 
+    title: "LASER MARKING/QR MACHINE",
+  },
+  { 
+    img: xrayCountingImg, 
+    title: "X-RAY COMPONENT COUNTING MACHINE",
+  },
+  { 
+    img: reflowImg, 
+    title: "KIC START REFLOW PROFILER",
+  },
+  { 
+    img: noncontactImg, 
+    title: "NON CONTACT 3D MEASURING SYSTEM",
+  },
+  { 
+    img: dustmeterImg, 
+    title: "DUST METER XTECH VPC300",
+  },
+
+
+
 ];
 
 
@@ -128,6 +167,39 @@ export default function MachinesPlants() {
               FOCUSTEK owns automated Machines and Plants of SMT Machines, an Auto Insertion Unit, ICT Rooms, Inspection Tools, and Special Tools for Electronic PCB Assembly, MI Production Line, Mechanical Production, and SMT Production.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* New Plant Announcement */}
+      <section style={{ padding: "60px 24px 0", background: "transparent" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <AnimSection>
+            <div style={{ 
+              background: "linear-gradient(135deg, var(--blue) 0%, #0a2558 100%)", 
+              borderRadius: 20, 
+              padding: "48px 32px", 
+              display: "flex", 
+              flexDirection: "column", 
+              alignItems: "center", 
+              textAlign: "center", 
+              color: "#fff",
+              boxShadow: "0 20px 50px rgba(0, 44, 108, 0.15)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              position: "relative",
+              overflow: "hidden"
+            }}>
+              <div style={{ position: "absolute", top: -80, right: -50, width: 250, height: 250, background: "rgba(255,255,255,0.03)", borderRadius: "50%" }}></div>
+              <div style={{ position: "absolute", bottom: -50, left: -80, width: 200, height: 200, background: "var(--accent)", opacity: 0.15, borderRadius: "50%", filter: "blur(20px)" }}></div>
+              
+              <div className="badge" style={{ background: "rgba(255,255,255,0.1)", color: "#fff", border: "1px solid rgba(255,255,255,0.2)", backdropFilter: "blur(8px)", marginBottom: 16 }}>Expansion Update</div>
+              <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 800, marginBottom: 16, fontFamily: "'DM Sans', sans-serif" }}>
+                New Plant <span style={{ color: "#60a5fa" }}>Under Construction</span>
+              </h2>
+              <p style={{ fontSize: "1.15rem", maxWidth: 650, color: "rgba(255,255,255,0.9)", lineHeight: 1.6 }}>
+                We are rapidly expanding our manufacturing footprint! A brand new, highly automated Focustek facility is currently under construction in <strong>Jhajjar, Haryana</strong>, bringing even more capacity and advanced technology to our operations.
+              </p>
+            </div>
+          </AnimSection>
         </div>
       </section>
 <section style={{ padding: "50px 24px 50px", background: "transparent" }}>

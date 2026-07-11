@@ -22,7 +22,7 @@ const COMPANY_CARDS = [
     img: visionImg
   },
   { 
-    title: "2021-2007 History", 
+    title: "2007-2025 History", 
     href: "/company/history", 
     desc: "A timeline of our milestones, growth, and continuous evolution in the EMS industry.",
     img: historyImg

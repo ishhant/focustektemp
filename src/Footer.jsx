@@ -1,7 +1,12 @@
 import isoLogo from "./assets/iso.png";
-import ursLogo from "./assets/urs.png";
+import ursLogo from "./assets/company/eu.png";
 import iatfLogo from "./assets/iatf.png";
 import msmeLogo from "./assets/msme.png";
+import euLogo from "./assets/eu.png";
+import ukasLogo from "./assets/company/ukas.png";
+
+
+
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -30,13 +35,16 @@ export default function Footer() {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 60px;
+          gap: 35px;
           flex-wrap: wrap;
         }
         .footer-logo {
-          height: 100px;
+          height: 115px;
           width: auto;
           object-fit: contain;
+        }
+        .eu-logo {
+          height: 85px !important;
         }
         .footer-link { 
           font-size: 13px; 
@@ -49,14 +57,17 @@ export default function Footer() {
 
         @media (max-width: 768px) {
           .logos-wrapper {
-            gap: 12px;
-            flex-wrap: nowrap;
-            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
           }
           .footer-logo {
-            height: auto;
-            width: 23%;
-            max-height: 80px;
+            height: 75px;
+            width: auto;
+            object-fit: contain;
+          }
+          .eu-logo {
+            height: 55px !important;
           }
           .footer-grid {
             grid-template-columns: 1fr 1fr !important; 
@@ -75,9 +86,12 @@ export default function Footer() {
 <section style={{ padding: "50px 24px 50px", background: "transparent" }}>
         <div className="logos-wrapper">
           <img src={isoLogo} alt="ISO 9001" className="footer-logo" />
-          <img src={ursLogo} alt="URS" className="footer-logo" />
+          <img src={ursLogo} alt="EU CERT" className="footer-logo eu-logo" />
           <img src={iatfLogo} alt="IATF" className="footer-logo" />
           <img src={msmeLogo} alt="MSME" className="footer-logo" />
+          <img src={ukasLogo} alt="UKAS" className="footer-logo" />
+
+
         </div>
       </section>
 <footer style={{ background: "#051226", padding: "50px 24px 50px", borderTop: "1px solid #e1e6f0" }}>
@@ -86,7 +100,7 @@ export default function Footer() {
             
             <div className="footer-brand" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left" }}>
               <div style={{ marginBottom: 16 }}>
-                <span style={{ fontWeight: 800, fontSize: 24, color: "#fff", letterSpacing: "0.05em", fontFamily: "'Syne', sans-serif" }}>FOCUSTEK</span>
+                <span style={{ fontWeight: 800, fontSize: 24, color: "#fff", letterSpacing: "0.05em", fontFamily: "'Montserrat', sans-serif" }}>FOCUSTEK</span>
               </div>
               <p style={{ fontSize: 13, color: "#a3afc2", lineHeight: 1.7, maxWidth: 320, marginBottom: 20, fontFamily: "'DM Sans', sans-serif" }}>
                 Focustek Manufacturing Services Pvt. Ltd.<br />

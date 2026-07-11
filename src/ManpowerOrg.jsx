@@ -76,7 +76,7 @@ export default function ManpowerOrg() {
         @media (max-width: 650px) { .tree { zoom: 0.55; } }
 
         .tree ul {
-          padding-top: 20px;
+          padding-top: 12px;
           position: relative;
           display: flex;
           justify-content: center;
@@ -89,7 +89,7 @@ export default function ManpowerOrg() {
           text-align: center;
           list-style-type: none;
           position: relative;
-          padding: 20px 4px 0 4px;
+          padding: 12px 3px 0 3px;
         }
         
         
@@ -97,11 +97,12 @@ export default function ManpowerOrg() {
           content: '';
           position: absolute; top: 0; right: 50%;
           border-top: 1px solid #94a3b8;
-          width: 50%; height: 20px;
+          width: 50%; height: 12px;
         }
         .tree li::after {
           right: auto; left: 50%;
           border-left: 1px solid #94a3b8;
+          margin-left: -1px;
         }
         .tree li:only-child::after, .tree li:only-child::before {
           display: none;
@@ -121,35 +122,37 @@ export default function ManpowerOrg() {
           content: '';
           position: absolute; top: 0; left: 50%;
           border-left: 1px solid #94a3b8;
-          width: 0; height: 20px;
+          width: 0; height: 12px;
           margin-left: -1px;
         }
         
         
         .tree li .node {
           border: 1px solid var(--dark);
-          padding: 8px 12px;
+          padding: 5px 8px;
           text-decoration: none;
           color: var(--dark);
           font-family: 'DM Sans', sans-serif;
-          font-size: 12px;
+          font-size: 10px;
           font-weight: 700;
           display: inline-block;
           border-radius: 4px;
           background: #fff;
           text-transform: uppercase;
+          letter-spacing: 0.02em;
         }
         .tree li .node.primary {
           border: 2px solid #2563eb;
           color: #2563eb;
-          font-size: 15px;
-          padding: 12px 30px;
+          font-size: 13px;
+          padding: 8px 22px;
         }
         .tree li .node.filled {
           background: #2563eb;
           color: #fff;
           border-color: #2563eb;
-          padding: 10px 20px;
+          padding: 6px 14px;
+          font-size: 10px;
         }
       `}</style>
 <Navbar activePage="Company" />
@@ -299,55 +302,186 @@ export default function ManpowerOrg() {
               <div className="tree">
                 <ul>
                   <li>
-<div className="node primary">MD/CEO</div>
+                    <div className="node primary">M.D.</div>
                     <ul>
-<li><div className="node filled">MARKETING</div></li>
-                      <li>
-                        <div className="node filled">OPERATIONS</div>
+                      {/* QUALITY Director branch (far left) */}
+                      <li style={{ width: "420px" }}>
+                        <div className="node filled">QUALITY DIRECTOR</div>
                         <ul>
-<li>
-                            <div className="node">STORES</div>
-                            <ul><li><div className="node">DISPATCH</div></li></ul>
-                          </li>
-                          <li><div className="node">PURCHASE</div></li>
-                          <li><div className="node">DEVELOPMENT</div></li>
                           <li>
-                            <div className="node">QUALITY</div>
-                            <ul>
-                              <li>
-                                <div className="node">CUSTOMER</div>
-                                <ul>
-                                  <li><div className="node">IN-PROCESS</div></li>
-                                  <li><div className="node">FINAL QA</div></li>
-                                  <li><div className="node">ENGINEERING</div></li>
-                                  <li><div className="node">IQC/IGI</div></li>
-                                </ul>
-                              </li>
-                            </ul>
+                            <div className="node">QUALITY HEAD</div>
+                            <div style={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                              
+                              {/* Gap to Row 1 */}
+                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
+                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
+                              </div>
+                              
+                              {/* Row 1 */}
+                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
+                                {/* Central Trunk for Row 1 */}
+                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
+                                
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>QA-NPD ENGINEER</div>
+                                   </div>
+                                </div>
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>QA-QMS ENGINEER</div>
+                                   </div>
+                                </div>
+                              </div>
+
+                              {/* Gap to Row 2 */}
+                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
+                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
+                              </div>
+
+                              {/* Row 2 */}
+                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>QA-CUSTOMER ENGINEER</div>
+                                   </div>
+                                </div>
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>IGI INSPECTOR</div>
+                                   </div>
+                                </div>
+                              </div>
+
+                            </div>
                           </li>
-                          <li><div className="node">H/R</div></li>
-                          <li>
-                            <div className="node">MAINTENANCE</div>
-                            <ul><li><div className="node">EXECUTIVE</div></li></ul>
-                          </li>
-                          <li>
-                            <div className="node">PRODUCTION</div>
-                            <ul>
-                              <li><div className="node">SMT</div></li>
-                              <li><div className="node">MI/AI</div></li>
-                              <li><div className="node">MECHANICAL</div></li>
-                            </ul>
-                          </li>
-                          <li><div className="node">PPC</div></li>
                         </ul>
                       </li>
+
                       <li>
-                        <div className="node filled">ACCOUNTS</div>
+                        <div className="node filled">MARKETING AND OPERATIONS</div>
                         <ul>
-                          <li><div className="node">EXECUTIVE</div></li>
+                          <li>
+                            <div className="node">HR HEAD</div>
+                            <ul>
+                              <li><div className="node">HR EXECUTIVE</div></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div className="node">STORE HEAD</div>
+                            <ul>
+                              <li><div className="node">DISPATCH ASSISTANT</div></li>
+                            </ul>
+                          </li>
+                          <li><div className="node">PURCHASE HEAD</div></li>
+                          <li>
+                            <div className="node">DEVELOPMENT HEAD</div>
+                            <ul>
+                              <li><div className="node">MECHANICAL QA ENGINEER</div></li>
+                              <li><div className="node">MECHANICAL ENGINEER</div></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div className="node">SMT HEAD</div>
+                            <div style={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                              
+                              {/* Gap to Row 1 */}
+                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
+                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
+                              </div>
+                              
+                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
+                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
+                                
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>SMT TEAM LEADER 1</div>
+                                   </div>
+                                </div>
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>SMT TEAM LEADER 2</div>
+                                   </div>
+                                </div>
+                              </div>
+
+                              {/* Gap to Row 2 */}
+                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
+                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
+                              </div>
+
+                              {/* Row 2 */}
+                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>SMT TEAM LEADER 3</div>
+                                   </div>
+                                </div>
+                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
+                                   {/* Horizontal line */}
+                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
+                                   {/* Drop */}
+                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
+                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
+                                      <div className="node" style={{ margin: "0 5px" }}>PPC ENGINEER</div>
+                                   </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </li>
+                          <li>
+                            <div className="node">MAINTENANCE HEAD</div>
+                            <ul>
+                              <li><div className="node">MAINTENANCE EXECUTIVE</div></li>
+                              <li><div className="node">IT EXECUTIVE</div></li>
+                            </ul>
+                          </li>
                         </ul>
                       </li>
-                      <li><div className="node">EXECUTIVE</div></li>
+
+                      {/* R&D and ACCOUNTS grouped to perfectly balance the Quality branch width */}
+                      <li style={{ width: "420px", paddingTop: 0 }}>
+                        <ul style={{ padding: 0, display: "flex", justifyContent: "center" }}>
+                          <li>
+                            <div className="node filled">R & D DIRECTOR</div>
+                          </li>
+                          <li>
+                            <div className="node filled">ACCOUNTS MANAGER</div>
+                            <ul>
+                              <li><div className="node">ACCOUNTS EXECUTIVE</div></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
                   </li>
                 </ul>

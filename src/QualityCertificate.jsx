@@ -13,6 +13,9 @@ import cert5_2 from "./assets/certificates/5.2.jpg";
 
 import cert6 from "./assets/certificates/6.jpg";
 import cert7 from "./assets/certificates/7.jpg";
+import cert8 from "./assets/certificates/8.jpg";
+import cert9 from "./assets/certificates/9.jpg";
+
 
 function CertificateCard({ cert, onImageClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -102,39 +105,48 @@ function CertificateCard({ cert, onImageClick }) {
 
 export default function QualityCertificate() {
   const [lightboxImg, setLightboxImg] = useState(null);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const certificates = [
     { id: 1, title: "IATF 16949:2016 CERTIFICATE", images: [cert2] },
     { id: 2, title: "ISO 14001:2015 CERTIFICATE", images: [cert3] },
     { id: 3, title: "ISO 45001:2018 CERTIFICATE", images: [cert4] },
+    { id: 8, title: "ISO 9001:2015", images: [cert8] },
     { id: 4, title: "HYUNDAI SQ 2014 CERTIFICATE", images: [cert6] },
     { id: 5, title: "ANSI/ESD S20.20-2021 CERTIFICATE", images: [cert7] },
     { id: 6, title: "IPC-A-610 CERTIFICATE", images: [cert1_1] },
     { id: 7, title: "MSME CERTIFICATE", images: [cert5_1,cert5_2] },
+    { id: 9, title: "MARUTI SUZUKI TIER-2 VENDOR ASSESSMENT", images: [cert9] },
+
 
   ];
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <Navbar activePage="Company" />
-{lightboxImg && (
+      {lightboxImg && (
         <div 
           style={{
             position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh",
             background: "rgba(0,0,0,0.85)", zIndex: 99999,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            cursor: "zoom-out", padding: "24px"
+            display: "flex", alignItems: isZoomed ? "flex-start" : "center", justifyContent: isZoomed ? "flex-start" : "center",
+            padding: "24px", overflow: "auto"
           }}
-          onClick={() => setLightboxImg(null)}
+          onClick={() => { setLightboxImg(null); setIsZoomed(false); }}
         >
           <img 
             src={lightboxImg} 
             alt="Expanded Certificate" 
             style={{ 
-              maxWidth: "100%", maxHeight: "100%", 
+              maxWidth: isZoomed ? "none" : "100%", 
+              maxHeight: isZoomed ? "none" : "100%", 
               objectFit: "contain", borderRadius: "8px",
-              boxShadow: "0 10px 40px rgba(0,0,0,0.5)"
-            }} 
+              boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+              cursor: isZoomed ? "zoom-out" : "zoom-in",
+              margin: isZoomed ? "auto" : "0",
+              transition: "all 0.3s ease"
+            }}
+            onClick={(e) => { e.stopPropagation(); setIsZoomed(!isZoomed); }}
           />
           <button 
             style={{
@@ -146,7 +158,7 @@ export default function QualityCertificate() {
             }}
             onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.3)"}
             onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.2)"}
-            onClick={(e) => { e.stopPropagation(); setLightboxImg(null); }}
+            onClick={(e) => { e.stopPropagation(); setLightboxImg(null); setIsZoomed(false); }}
           >
             &times;
           </button>

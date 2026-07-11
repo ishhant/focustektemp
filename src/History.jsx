@@ -4,50 +4,25 @@ import { AnimSection, WhatsAppButton } from "./SharedComponents";
 import historyBannerImg from "./assets/img1.jpg"; 
 
 const HISTORY_DATA = [
-  { 
-    year: "2007", 
-    text: "Mr. S.H. Park founded the company, naming it Focustek Manufacturing Services Pvt. Ltd." 
-  },
-  { 
-    year: "2008", 
-    text: "Secured a contract with Hella India Automotive Pvt. Ltd., a German company, for Actuator PCB Assembly." 
-  },
-  { 
-    year: "2010", 
-    text: "Achieved ISO/TS-16949 certification." 
-  },
-  { 
-    year: "2011", 
-    text: "Relocated the factory from Sector-18, Udyog Vihar, Gurgaon to Plot No. 188, Sector-4, IMT Manesar, Gurgaon." 
-  },
-  { 
-    year: "2012", 
-    text: "Expanded business operations to include mechanical manufacturing." 
-  },
-  { 
-    year: "2013", 
-    text: "Obtained ISO/TS certification for the mechanical business division." 
-  },
-  { 
-    year: "2017", 
-    text: "Initiated Security Controller and Siren Assembly projects for Nippon (serving Maruti and Mahindra)." 
-  },
-  { 
-    year: "2018", 
-    text: "Started a new BLDC motor project for Hella and achieved IATF 16949:2016 certification from NQA." 
-  },
-  { 
-    year: "2019", 
-    text: "Successfully completed the Maruti Vendor Sustenance Audit (Tier-2) with a Green certificate. Launched new projects with Minda (FOB, SCU, B101, Hero ACPA)." 
-  },
-  { 
-    year: "2020", 
-    text: "Commenced new projects for Hella, including the Yamaha MEFCU." 
-  },
-  { 
-    year: "2021", 
-    text: "Successfully completed the Maruti Vendor Sustenance Audit (Tier-2) with a Green certificate. Launched new projects with Minda (FOB, SCU, B101, Hero ACPA)." 
-  }
+  { year: "2007", text: "Focustek was founded in the year 2007 and works on MEAI PCBA (Maruti Omni ECU PCBA) and JNS PCBA (Maruti Alto Cluster) projects." },
+  { year: "2008", text: "Added new business from HELLA INDIA AUTOMOTIVE PVT. LTD., a German company, for Actuator PCB Assembly." },
+  { year: "2009", text: "Added a new business from ACME Tele power." },
+  { year: "2010", text: "Focustek received the ISO/TS 16949 certificate for its electronics business." },
+  { year: "2011", text: "Added new business from JNS and Hella India Automotive Pvt. Ltd." },
+  { year: "2012", text: "Added new business from Phoenix Contact, and the company has also expanded its operations in the Mechanical field." },
+  { year: "2013", text: "Focustek received ISO/TS Certificate for Mechanical business also." },
+  { year: "2014", text: "Added new business from Hella and Padmini." },
+  { year: "2015", text: "Added new business from JNS." },
+  { year: "2016", text: "Added new business from JNS and VVDN." },
+  { year: "2017", text: "Added new business from Nippon Audiotronics for Security controller & Siren PCBA (Maruti)." },
+  { year: "2018", text: "Added new business from Hella for BLDC motors and achieved IATF 16949:2016 certification from NQA." },
+  { year: "2019", text: "Added new business from Hella (Kinetic Green, Piaggio India, Piaggio Italy) and Phonix Contact." },
+  { year: "2020", text: "Maruti Vendor Sustenance Audit (Tier-2) successfully completed with Green Certificate. Added new business from Minda for Hero FOB, SCU, and Mahindra." },
+  { year: "2021", text: "Maruti Vendor Sustenance Audit (Tier-2) successfully completed with Green Certificate. Added new project from Minda (Bajaj FOB, SCU) and IIL." },
+  { year: "2022", text: "Added a new project from Hella (2W hub Controller, Hero MFECU), Hitech robotic (ADAS PCBA) IOTFY (Home appliance) & Drone Power (EV Charger)." },
+  { year: "2023", text: "Added new project from Motherson, IOTFY (Hidden Display PCBA), and IIL." },
+  { year: "2024", text: "Added a new product from MARS and Motrex for the Hyundai project." },
+  { year: "2025", text: "Maruti Vendor Sustenance Audit (Tier-2) successfully completed with Green Certificate. Added new business from MEAI and also new business from Nippon Audio Tronics." }
 ];
 
 export default function OurHistory() {
@@ -56,91 +31,135 @@ export default function OurHistory() {
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
       <style>{`
         
-        .timeline {
-          position: relative;
-          max-width: 1000px;
-          margin: 60px auto 0;
+        .timeline-wrapper {
+          max-width: 900px;
+          margin: 40px auto;
+          display: flex;
+          flex-direction: column;
         }
 
-        
-        .timeline::after {
+        .timeline-row {
+          display: flex;
+          align-items: stretch;
+          position: relative;
+        }
+
+        .timeline-row::after {
           content: '';
           position: absolute;
-          width: 4px;
-          background-color: var(--border);
+          left: 130px;
           top: 0;
           bottom: 0;
-          left: 50%;
-          margin-left: -2px;
-          border-radius: 4px;
+          width: 4px;
+          background: rgba(0, 44, 108, 0.08);
+          z-index: 0;
         }
+        .timeline-row.first::after { top: 50%; }
+        .timeline-row.last::after { bottom: 50%; }
 
-        .timeline-item {
-          padding: 10px 40px;
+        .timeline-left {
+          width: 130px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding-right: 32px;
           position: relative;
-          background-color: inherit;
-          width: 50%;
-        }
-
-        .timeline-item.left { left: 0; }
-        .timeline-item.right { left: 50%; }
-
-        
-        .timeline-item::after {
-          content: '';
-          position: absolute;
-          width: 22px;
-          height: 22px;
-          right: -11px;
-          background-color: #fff;
-          border: 4px solid var(--accent);
-          top: 32px;
-          border-radius: 50%;
           z-index: 1;
-          box-shadow: 0 0 0 4px rgba(255, 37, 0, 0.1);
         }
-        .timeline-item.right::after { left: -11px; }
 
-        
-        .timeline-card {
-          padding: 28px 32px;
+        .timeline-dot {
+          position: absolute;
+          left: 100%;
+          margin-left: -6px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 16px;
           background: #fff;
-          position: relative;
-          border-radius: 16px;
-          border: 1px solid var(--border);
-          box-shadow: 0 4px 20px rgba(0,44,108,0.03);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .timeline-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 40px rgba(0,44,108,0.08);
-          border-color: var(--blue-light);
+          border: 3px solid var(--accent);
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          box-shadow: 0 0 0 4px rgba(255,37,0,0.1);
         }
 
         .timeline-year {
           font-family: 'Syne', sans-serif;
-          font-size: 28px;
+          font-size: 26px;
           font-weight: 800;
           color: var(--blue);
-          margin-bottom: 12px;
-          display: inline-block;
-          background: var(--blue-light);
-          padding: 4px 16px;
-          border-radius: 8px;
         }
 
-        .timeline-text {
-          color: var(--gray);
-          line-height: 1.7;
-          font-size: 15px;
+        .timeline-right {
+          flex: 1;
+          padding: 16px 0 16px 40px; 
+          position: relative;
+          z-index: 1;
         }
 
+        .timeline-content {
+          background: #fff;
+          padding: 24px;
+          border-radius: 12px;
+          border: 1px solid var(--border);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .timeline-content::before {
+          content: '';
+          position: absolute;
+          left: -7px;
+          top: 50%;
+          margin-top: -7px;
+          width: 14px;
+          height: 14px;
+          background: #fff;
+          border-left: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+          transform: rotate(45deg);
+          transition: all 0.3s ease;
+        }
+
+        .timeline-row:hover .timeline-dot {
+          background: var(--accent);
+          transform: translateY(-50%) scale(1.3);
+          box-shadow: 0 0 15px rgba(255,37,0,0.4);
+        }
         
+        .timeline-row:hover .timeline-content {
+          transform: scale(1.02);
+          border-color: var(--accent);
+          box-shadow: 0 10px 30px rgba(0,44,108,0.08);
+        }
+        
+        .timeline-row:hover .timeline-content::before {
+          border-color: var(--accent);
+        }
+
+        .timeline-desc {
+          color: var(--gray);
+          font-size: 15px;
+          line-height: 1.6;
+          font-weight: 500;
+        }
+
         @media screen and (max-width: 768px) {
-          .timeline::after { left: 31px; }
-          .timeline-item { width: 100%; padding-left: 70px; padding-right: 0px; }
-          .timeline-item.left, .timeline-item.right { left: 0; }
-          .timeline-item::after, .timeline-item.right::after { left: 20px; }
+          .timeline-row { flex-direction: column; }
+          .timeline-row::after { left: 32px; }
+          .timeline-left { width: 100%; justify-content: flex-start; padding: 20px 0 0 64px; }
+          .timeline-dot { left: 34px; margin-left: -8px; top: 34px; transform: none; }
+          .timeline-row:hover .timeline-dot { transform: scale(1.3); }
+          .timeline-right { padding: 12px 24px 24px 64px; }
+          .timeline-content::before { 
+            left: 32px; 
+            top: -7px; 
+            margin-top: 0;
+            border-left: 1px solid var(--border); 
+            border-top: 1px solid var(--border); 
+            border-bottom: none; 
+          }
+          .timeline-row:hover .timeline-content::before { border-color: var(--accent); }
         }
       `}</style>
 
@@ -185,20 +204,22 @@ export default function OurHistory() {
             </div>
           </AnimSection>
 
-          <div className="timeline">
-            {HISTORY_DATA.map((item, index) => {
-              const alignClass = index % 2 === 0 ? 'left' : 'right';
-              return (
-                <AnimSection key={index} delay={100}>
-                  <div className={`timeline-item ${alignClass}`}>
-                    <div className="timeline-card">
-                      <div className="timeline-year">{item.year}</div>
-                      <p className="timeline-text">{item.text}</p>
+          <div className="timeline-wrapper">
+            {HISTORY_DATA.map((item, index) => (
+              <AnimSection key={index} delay={index * 50}>
+                <div className={`timeline-row ${index === 0 ? 'first' : ''} ${index === HISTORY_DATA.length - 1 ? 'last' : ''}`}>
+                  <div className="timeline-left">
+                    <div className="timeline-year">{item.year}</div>
+                    <div className="timeline-dot"></div>
+                  </div>
+                  <div className="timeline-right">
+                    <div className="timeline-content">
+                      <p className="timeline-desc">{item.text}</p>
                     </div>
                   </div>
-                </AnimSection>
-              );
-            })}
+                </div>
+              </AnimSection>
+            ))}
           </div>
 
         </div>

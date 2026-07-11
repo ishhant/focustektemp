@@ -9,13 +9,14 @@ import turnkeyImg from "./assets/products_services/turnkey.jpg";
 import tradingImg from "./assets/products_services/machine_trading.jpg"; 
 import CompanyA from "./assets/products_services/slideshow/9.png"; 
 import CompanyB from "./assets/products_services/slideshow/2.jpg";
-import CompanyC from "./assets/products_services/slideshow/3.jpg";
+import CompanyC from "./assets/products_services/slideshow/3.jpeg";
 import CompanyD from "./assets/products_services/slideshow/4.jpg";
 import CompanyE from "./assets/products_services/slideshow/5.jpg";
 import CompanyF from "./assets/products_services/slideshow/6.jpg";
 import turnkey1 from "./assets/products_services/turnkey1.jpg"; 
 import turnkey2 from "./assets/products_services/turnkey2.jpg"; 
 import turnkey3 from "./assets/products_services/turnkey3.jpg"; 
+import turnkey4 from "./assets/products_services/turnkey4.jpg"; 
 import mt1 from "./assets/products_services/mt1.jpg"; 
 import mt2 from "./assets/products_services/mt2.jpg"; 
 import mt3 from "./assets/products_services/mt3.jpg"; 
@@ -48,7 +49,7 @@ const SERVICES_DATA = [
     desc: "We offer quality turn-key assembly solutions for customer electronic products. We take customer designs and provide low-cost alternatives for on-time delivery. Employing SPC and stringent QC practices, we monitor all aspects of production to ensure maximum customer satisfaction.",
     sectors: ["Automotive Sector", "Communication Sector", "Aeronautic Sector"],
     capabilities: ["Complete Product Assembly", "MI Production", "Mixed SMT & T/Hole"],
-    images: [turnkey1, turnkey2, turnkey3], 
+    images: [turnkey1, turnkey2, turnkey3, turnkey4, ], 
     reverse: false 
   },
   {

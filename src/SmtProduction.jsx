@@ -35,90 +35,79 @@ const SMT_CONFIGURATIONS = [
   {
     title: "SMT Line 1",
     machines: [
-      "PCB LOADER",
-      "PCB FLIPPER",
-      "PCB DUST CLEANER",
-      "Pansonic PASTE PRINTER",
-      "KOH YOUNG SPI",
-      "NM-EJMTD /NPM-W1",
-      "NM-EJMTD /NPM-W2",
-      "PICK & PLACE MOUNTER 3",
-      "HELLER REFLOW",
-      "PCB STRACKER",
-      "INLINE AOI",
-      "NG LOADER",
-      "PCB UNLOADER"
+      "PCB LOADER & PCB CLEANER",
+      "PANASONIC SPG",
+      "KOH YOUNG KY8030-2 -SPI",
+      "PANASONIC NPM-D3",
+      "PANASONIC NPM-W2",
+      "PANASONIC AM100",
+      "HELLER 1910 MK V-DL",
+      "KOH YOUNG ZENITH 3D AOI"
     ]
   },
   {
     title: "SMT Line 2",
     machines: [
-      "PCB LOADER",
-      "PCB FLIPPER",
-      "PCB DUST CLEANER",
-      "PCB PASTE PRINTER",
-      "KOH YOUNG SPI",
-      "NM-EJMTD /NPM-W2",
-      "SHIFT CONVEYOR",
-      "YCM-7800VX",
-      "HANWHA SM-482 PLUS",
-      "HELLER REFLOW",
-      "PCB STRACKER",
-      "3D AOI",
-      "REVIEW STATION",
-      "PCB UNLOADER"
+      "PCB LOADER & PCB CLEANER",
+      "DEK GALAXY APi",
+      "KOH YOUNG KY-8030-NOVA",
+      "PANASONIC NPM-W2",
+      "CASIO YCM 7800 VX",
+      "HANWHA SM482 PLUS",
+      "HELLER 1913 MK-III",
+      "KOH YOUNG ZENITH 3D AOI"
     ]
   },
   {
     title: "SMT Line 3",
     machines: [
-      "PCB LOADER",
-      "PCB FLIPPER",
-      "PCB DUST CLEANER",
-      "PCB PASTE PRINTER SPG/NM-EJ6A",
-      "KOH YOUNG SPI KY-8030-2",
-      "NM-EJMTD /NPM-W2",
-      "NM-EJMTD /NPM-W2",
-      "NM-EJM4D /AM100",
-      "HELLER REFLOW",
-      "KOH YOUNG INLINE AOI",
-      "IL-JIN ANB-10X NG LOADER",
-      "IL-JIN PCB UNLOADER"
+      "PCB LOADER & PCB CLEANER",
+      "PANASONIC SPG",
+      "KOH YOUNG KY8030-2 -SPI",
+      "PANASONIC NPM-W2",
+      "PANASONIC NPM-W2",
+      "PANASONIC AM100",
+      "HELLER 1913 MK V-E",
+      "KOH YOUNG ZENITH UHS 3D AOI"
     ]
   },
   {
     title: "SMT Line 4",
     machines: [
-      "PCB LOADER",
-      "PCB CLEANER",
-      "DEK PASTE PRINTER",
-      "KOH YOUNG SPI KY-8-30-3",
-      "CONVEYOR",
-      "NM-EJMTD /NPM-D3",
-      "NM-EJMTD /NPM-W2",
-      "NPM-WX",
-      "HELLER REFLOW",
-      "KOH YOUNG INLINE AOI",
-      "REVIEW STATION",
-      "PCB UNLOADER"
+      "PCB LOADER & PCB CLEANER",
+      "DEK GALAXY APi",
+      "KOH YOUNG KY8030 -3-SPI",
+      "PANASONIC NPM-D3",
+      "PANASONIC NPM-W2",
+      "PANASONIC NPM-WX",
+      "HELLER 1913 EXL",
+      "KOH YOUNG ZENITH 3D AOI"
     ]
   },
   {
     title: "SMT Line 5",
     machines: [
       "PCB LOADER",
-      "DEK PASTE PRINTER",
-      "KOH YOUNG KY-8030-2 SPI",
-      "HANWAH SM471",
-      "CASIO YCM-7800VX2",
-      "GATE CONVEYOR",
-      "CASIO YCM-8800VX",
-      "HELLER REFLOW",
-      "CONVEYOR",
-      "PCB UNLOADER",
-      "MIRTEK AOI MV-3L"
+      "DEK GALAXY APiv",
+      "KOH YOUNG KY8030-2 -SPI",
+      "HANWHA SM471 PLUS",
+      "CASIO YCM 7800 VX-II",
+      "CASIO YCM 8800 VX",
+      "HELLER 1809 MK-III",
+      "MIRTEC MV-3L 2D AOI"
     ]
   }
+];
+
+const MACHINE_DESCRIPTIONS = [
+  "PCB LOADER",
+  "PASTE PRINTER",
+  "SOLDER PASTE INSPECTION",
+  "PICK & PLACE CHIP SHOOTER",
+  "MULTI MOUNTER",
+  "MULTI MOUNTER",
+  "REFLOW SOLDERING",
+  "AOI"
 ];
 
 export default function SmtProduction() {
@@ -213,72 +202,43 @@ export default function SmtProduction() {
             </div>
           </AnimSection>
 
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12, marginBottom: 32 }}>
-            {SMT_CONFIGURATIONS.map((line, idx) => (
-              <button 
-                key={idx}
-                onClick={() => setActiveLine(idx)}
-                style={{
-                  padding: "12px 24px",
-                  background: activeLine === idx ? "var(--blue)" : "#fff",
-                  color: activeLine === idx ? "#fff" : "var(--dark)",
-                  border: activeLine === idx ? "1px solid var(--blue)" : "1px solid var(--border)",
-                  borderRadius: "30px",
-                  fontSize: 15,
-                  fontWeight: 700,
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  boxShadow: activeLine === idx ? "0 4px 15px rgba(0, 44, 108, 0.2)" : "0 2px 8px rgba(0,0,0,0.02)"
-                }}
-              >
-                {line.title}
-              </button>
-            ))}
-          </div>
-
-          <AnimSection key={activeLine}>
+          <AnimSection>
             <div style={{
               background: "#fff",
               borderRadius: "16px",
-              padding: "32px",
               boxShadow: "0 10px 40px rgba(0, 44, 108, 0.08)",
               border: "1px solid var(--border)",
-              position: "relative",
               overflow: "hidden",
-              maxWidth: 800,
-              margin: "0 auto"
+              overflowX: "auto"
             }}>
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: "var(--accent)" }}></div>
-              
-              <h3 style={{ fontSize: "1.4rem", fontWeight: 800, color: "var(--dark)", marginBottom: 24, textAlign: "center" }}>
-                {SMT_CONFIGURATIONS[activeLine].title} Configuration
-              </h3>
-              
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 12 }}>
-                {SMT_CONFIGURATIONS[activeLine].machines.map((machine, mIdx) => (
-                  <div key={mIdx} style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    padding: "12px 16px",
-                    background: mIdx % 2 === 0 ? "rgba(0, 44, 108, 0.02)" : "transparent",
-                    borderRadius: "8px",
-                    fontSize: 14,
-                    fontWeight: 600,
-                    color: "var(--dark)"
-                  }}>
-                    <div style={{ 
-                      width: 24, height: 24, borderRadius: "50%", 
-                      background: "var(--blue-light)", color: "var(--blue)", 
-                      display: "flex", alignItems: "center", justifyContent: "center", 
-                      flexShrink: 0, fontSize: 11, fontWeight: 800 
-                    }}>
-                      {mIdx + 1}
-                    </div>
-                    {machine}
-                  </div>
-                ))}
-              </div>
+              <table style={{ width: "100%", minWidth: 1000, borderCollapse: "collapse", textAlign: "left" }}>
+                <thead>
+                  <tr style={{ background: "var(--blue)", color: "#fff" }}>
+                    <th style={{ padding: "20px 24px", fontSize: 13, fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase", borderRight: "1px solid rgba(255,255,255,0.1)" }}>
+                      DESCRIPTION
+                    </th>
+                    {SMT_CONFIGURATIONS.map((line, idx) => (
+                      <th key={idx} style={{ padding: "20px 24px", fontSize: 13, fontWeight: 800, letterSpacing: "1px", textTransform: "uppercase", borderRight: idx === SMT_CONFIGURATIONS.length - 1 ? "none" : "1px solid rgba(255,255,255,0.1)", textAlign: "center" }}>
+                        {line.title}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {MACHINE_DESCRIPTIONS.map((desc, rowIdx) => (
+                    <tr key={rowIdx} style={{ borderBottom: rowIdx === MACHINE_DESCRIPTIONS.length - 1 ? "none" : "1px solid var(--border)", background: rowIdx % 2 === 0 ? "#fff" : "rgba(0, 44, 108, 0.02)" }}>
+                      <td style={{ padding: "16px 24px", fontSize: 13, fontWeight: 800, color: "var(--dark)", borderRight: "1px solid var(--border)", background: "rgba(0, 44, 108, 0.04)" }}>
+                        {desc}
+                      </td>
+                      {SMT_CONFIGURATIONS.map((line, colIdx) => (
+                        <td key={colIdx} style={{ padding: "16px 24px", fontSize: 13, fontWeight: 600, color: "var(--gray)", textAlign: "center", borderRight: colIdx === SMT_CONFIGURATIONS.length - 1 ? "none" : "1px solid var(--border)" }}>
+                          {line.machines[rowIdx] || "-"}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </AnimSection>
         </div>
