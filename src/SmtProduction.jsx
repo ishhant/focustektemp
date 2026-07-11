@@ -253,7 +253,7 @@ export default function SmtProduction() {
               FOCUSTEK owns many professional engineers and high-end machines to provide BGA (Ball Grid Array) packages with high quality and extreme precision. Turnkey service for BGA assembly and other complex assembly methods is readily available.
             </p>
             
-            <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--dark)", marginBottom: 16 }}>ST Micro Electronics, Transwitch, Samtel Ltd., UT Starcom, Bharat Electronics Ltd., VNL</h3>
+            <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--dark)", marginBottom: 16 }}>Alpine Systems, Nippon, Hi-Tech Robotics, Samtel Ltd.</h3>
             
             <div style={{ margin: "40px auto 0", borderRadius: "16px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.1)", border: "1px solid var(--border)" }}>
               <img src={img1} alt="BGA Assembly PCB" style={{ width: "100%", display: "block" }} />

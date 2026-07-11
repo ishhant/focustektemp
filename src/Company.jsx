@@ -121,7 +121,7 @@ export default function Company() {
               lineHeight: 1.6,
               textShadow: "0 2px 8px rgba(0, 0, 0, 0.3)"
             }}>
-              Driving excellence in Electronic Manufacturing Services with uncompromised quality and cutting-edge technology since 2001.
+              Driving excellence in Electronic Manufacturing Services with uncompromised quality and cutting-edge technology since 2007.
             </p>
           </div>
         </div>

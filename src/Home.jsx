@@ -25,6 +25,7 @@ import slide13 from "./assets/slideshow/13.jpg";
 import slide14 from "./assets/slideshow/14.jpg";
 import slide15 from "./assets/slideshow/15.jpg";
 import slide16 from "./assets/slideshow/16.jpg";
+import slide17 from "./assets/slideshow/17.jpeg";
 
 import mainImg from "./assets/main.jpg";
 import Footer from "./Footer";
@@ -79,7 +80,7 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide8a, slide8b, slide9, slide10, slide11, slide12, slide13, slide14, slide15, slide16];
+  const slideImages = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide8a, slide8b, slide9, slide10, slide11, slide12, slide13, slide14, slide15, slide16, slide17];
   const TOTAL_SLIDES = slideImages.length;
 
   useEffect(() => {
@@ -538,7 +539,7 @@ export default function Home() {
             
             <div style={{ width: "100%", background: "#000", display: "flex", justifyContent: "center" }}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1209006092?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                  src="https://player.vimeo.com/video/1209006092?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&quality=720p" 
                   width="100%" 
                   style={{ aspectRatio: "16/9", maxWidth: "1280px" }}
                   frameBorder="0" 

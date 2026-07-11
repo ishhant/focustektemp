@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
 import bannerImg from "./assets/contact.jpg";  
+import jhajjarImg from "./assets/jhajjhar.jpg";
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function ContactUs() {
   const [state, handleSubmit] = useForm('xwvdozlw');
+  const [mapLocation, setMapLocation] = useState('Gurgaon');
 
   useEffect(() => {
     if (window.location.hash === '#inquiry-form') {
@@ -188,13 +190,57 @@ export default function ContactUs() {
 <AnimSection delay={100}>
           <div style={{ marginTop: 80 }}>
             <h2 className="section-title" style={{ textAlign: "center" }}>Find Us on Map</h2>
-            <div className="divider-center" style={{ marginBottom: 40 }}></div>
+            <div className="divider-center" style={{ marginBottom: 30 }}></div>
             
-            <div style={{ width: "100%", height: "450px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0, 44, 108, 0.08)", border: "1px solid var(--border)" }}>
-              <iframe 
-                src="https://maps.google.com/maps?q=Focustek+Manufacturing+Services+Pvt.+Ltd.,+Sector-4,+IMT+Manesar,+Gurgaon&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Focustek Location">
-              </iframe>
+            <div style={{ display: "flex", justifyContent: "center", gap: 16, marginBottom: 40, flexWrap: "wrap" }}>
+              <button 
+                onClick={() => setMapLocation('Gurgaon')}
+                style={{
+                  padding: "12px 32px", fontSize: 15, fontWeight: 700, borderRadius: 30, cursor: "pointer",
+                  background: mapLocation === 'Gurgaon' ? "var(--blue)" : "transparent",
+                  color: mapLocation === 'Gurgaon' ? "#fff" : "var(--blue)",
+                  border: "2px solid var(--blue)", transition: "all 0.3s",
+                  boxShadow: mapLocation === 'Gurgaon' ? "0 4px 12px rgba(0,44,108,0.2)" : "none"
+                }}
+              >
+                Gurgaon (HQ)
+              </button>
+              <button 
+                onClick={() => setMapLocation('Jhajjar')}
+                style={{
+                  padding: "12px 32px", fontSize: 15, fontWeight: 700, borderRadius: 30, cursor: "pointer",
+                  background: mapLocation === 'Jhajjar' ? "var(--blue)" : "transparent",
+                  color: mapLocation === 'Jhajjar' ? "#fff" : "var(--blue)",
+                  border: "2px solid var(--blue)", transition: "all 0.3s",
+                  boxShadow: mapLocation === 'Jhajjar' ? "0 4px 12px rgba(0,44,108,0.2)" : "none"
+                }}
+              >
+                Jhajjar (New Plant)
+              </button>
+            </div>
+
+            <div style={{ width: "100%", height: "450px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0, 44, 108, 0.08)", border: "1px solid var(--border)", position: "relative" }}>
+              {mapLocation === 'Gurgaon' ? (
+                <iframe 
+                  src="https://maps.google.com/maps?q=Focustek+Manufacturing+Services+Pvt.+Ltd.,+Sector-4,+IMT+Manesar,+Gurgaon&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Focustek Location">
+                </iframe>
+              ) : (
+                <div style={{ 
+                  width: "100%", height: "100%", 
+                  background: `linear-gradient(rgba(5, 18, 38, 0.7), rgba(0, 44, 108, 0.8)), url(${jhajjarImg})`, 
+                  backgroundSize: "cover", backgroundPosition: "center",
+                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                  color: "#fff", textAlign: "center", padding: 24
+                }}>
+                  <div className="badge" style={{ background: "var(--accent)", color: "#fff", border: "none", marginBottom: 16 }}>Under Construction</div>
+                  <h3 style={{ fontSize: "2.2rem", fontWeight: 800, marginBottom: 16, fontFamily: "'DM Sans', sans-serif" }}>New Jhajjar Facility</h3>
+                  <p style={{ fontSize: "1.1rem", maxWidth: 700, color: "rgba(255,255,255,0.9)", lineHeight: 1.6 }}>
+                    Our brand new, state-of-the-art manufacturing plant is currently under construction at:<br/><br/>
+                    <strong>Plot No. 9, Sector 10A, Street No. B, Model Economic Township, Sondhi, Tehsil-Badli, Jhajjar, Haryana</strong>
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </AnimSection>

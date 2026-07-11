@@ -19,8 +19,11 @@ import img2w6 from "./assets/customers/2w6.jpg";
 import img2w8 from "./assets/customers/2w8.jpg";
 
 import imgCe1 from "./assets/customers/ce1.jpg";
-import imgCe2 from "./assets/customers/ce2.jpg";
+import imgCe2 from "./assets/customers/voltas.svg";
 import imgCe3 from "./assets/customers/ce3.jpg";
+import imgCe4 from "./assets/customers/lnt.png";
+import imgCe5 from "./assets/customers/uc.png";
+
 
 const CUSTOMER_DATA = [
   {
@@ -52,6 +55,8 @@ const CUSTOMER_DATA = [
       imgCe1,
       imgCe2,
       imgCe3,
+      imgCe4,
+      imgCe5
     ]
   }
 ];

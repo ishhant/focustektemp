@@ -17,16 +17,8 @@ const MI_CAPACITY = [
     title: "Total Capacity Minimum",
     subtitle: "(Per Month)",
     lines: [
-      { name: "ROHS Line 1", value: "500,000", unit: "PCBA / Month" },
-      { name: "ROHS Line 2", value: "500,000", unit: "PCBA / Month" }
-    ]
-  },
-  {
-    title: "Balance Capacity Minimum",
-    subtitle: "(Per Month)",
-    lines: [
-      { name: "ROHS Line 1", value: "250,000", unit: "Panel / Month" },
-      { name: "ROHS Line 2", value: "250,000", unit: "Panel / Month" }
+      { name: "ROHS Line 1", value: "2138400", unit: "CPH / Month" },
+      { name: "ROHS Line 2", value: "2138400", unit: "CPH / Month" }
     ]
   }
 ];
