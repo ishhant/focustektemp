@@ -25,40 +25,11 @@ import imgCe4 from "./assets/customers/lnt.png";
 import imgCe5 from "./assets/customers/uc.png";
 
 
-const CUSTOMER_DATA = [
-  {
-    category: "4 Wheelers & Industrial Vehicle",
-    images: [
-      img4w1,
-      img4w2,
-      img4w3,
-      img4w4,
-      img4w5,
-      img4w6,
-    ]
-  },
-  {
-    category: "2 Wheelers",
-    images: [
-      img2w1,
-      img2w2,
-      img2w3,
-      img2w4,
-      img2w5,
-      img2w6,
-      img2w8,
-    ]
-  },
-  {
-    category: "Consumer Electronics",
-    images: [
-      imgCe1,
-      imgCe2,
-      imgCe3,
-      imgCe4,
-      imgCe5
-    ]
-  }
+
+const ALL_CUSTOMERS = [
+  img4w1, img4w2, img4w3, img4w4, img4w5, img4w6,
+  img2w1, img2w2, img2w3, img2w4, img2w5, img2w6, img2w8,
+  imgCe1, imgCe2, imgCe3, imgCe4, imgCe5
 ];
 
 export default function Customers() {
@@ -117,70 +88,53 @@ export default function Customers() {
             </div>
           </AnimSection>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 80 }}>
-            {CUSTOMER_DATA.map((group, idx) => (
-              <AnimSection key={idx} delay={idx * 100}>
-                <div>
-                  <h3 style={{ 
-                    fontSize: "1.5rem", 
-                    fontWeight: 700, 
-                    color: "var(--dark)", 
-                    marginBottom: 8,
-                    textAlign: "center"
-                  }}>
-                    {group.category}
-                  </h3>
-                  <div className="divider-center" style={{ marginBottom: 32 }}></div>
-<div style={{ 
-                    display: "grid", 
-                    gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", 
-                    gap: 24 
-                  }}>
-                    {group.images.map((imgSrc, imgIdx) => (
-                      <div key={imgIdx} style={{
-                        background: "#fff",
-                        borderRadius: "12px",
-                        padding: "24px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        aspectRatio: "3 / 2",
-                        border: "1px solid var(--border)",
-                        boxShadow: "0 4px 12px rgba(0,44,108,0.03)",
-                        transition: "all 0.3s ease",
-                        cursor: "default"
-                      }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.transform = "translateY(-4px)";
-                        e.currentTarget.style.boxShadow = "0 12px 24px rgba(0,44,108,0.08)";
-                        e.currentTarget.style.borderColor = "var(--blue-light)";
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.transform = "translateY(0)";
-                        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,44,108,0.03)";
-                        e.currentTarget.style.borderColor = "var(--border)";
-                      }}>
-                        <img 
-                          src={imgSrc} 
-                          alt={`Customer Logo ${imgIdx + 1}`} 
-                          style={{ 
-                            width: "100%", 
-                            height: "100%", 
-                            objectFit: "contain",
-                            filter: "grayscale(10%)",
-                            transition: "filter 0.3s ease"
-                          }} 
-                          onMouseEnter={e => e.currentTarget.style.filter = "grayscale(0%)"}
-                          onMouseLeave={e => e.currentTarget.style.filter = "grayscale(10%)"}
-                          onError={(e) => {
-
-                            e.target.style.display = "none";
-                            e.target.parentNode.innerHTML += `<span style="color:var(--gray);font-size:0.85rem;font-weight:600;">Logo Pending</span>`;
-                          }}
-                        />
-                      </div>
-                    ))}
-                  </div>
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", 
+            gap: 24 
+          }}>
+            {ALL_CUSTOMERS.map((imgSrc, imgIdx) => (
+              <AnimSection key={imgIdx} delay={imgIdx * 40}>
+                <div style={{
+                  background: "#fff",
+                  borderRadius: "12px",
+                  padding: "24px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  aspectRatio: "3 / 2",
+                  border: "1px solid var(--border)",
+                  boxShadow: "0 4px 12px rgba(0,44,108,0.03)",
+                  transition: "all 0.3s ease",
+                  cursor: "default"
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.boxShadow = "0 12px 24px rgba(0,44,108,0.08)";
+                  e.currentTarget.style.borderColor = "var(--blue-light)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,44,108,0.03)";
+                  e.currentTarget.style.borderColor = "var(--border)";
+                }}>
+                  <img 
+                    src={imgSrc} 
+                    alt={`Customer Logo ${imgIdx + 1}`} 
+                    style={{ 
+                      width: "100%", 
+                      height: "100%", 
+                      objectFit: "contain",
+                      filter: "grayscale(10%)",
+                      transition: "filter 0.3s ease"
+                    }} 
+                    onMouseEnter={e => e.currentTarget.style.filter = "grayscale(0%)"}
+                    onMouseLeave={e => e.currentTarget.style.filter = "grayscale(10%)"}
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.parentNode.innerHTML += `<span style="color:var(--gray);font-size:0.85rem;font-weight:600;">Logo Pending</span>`;
+                    }}
+                  />
                 </div>
               </AnimSection>
             ))}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { AnimSection, WhatsAppButton } from "./SharedComponents";
@@ -6,6 +6,38 @@ import manpowerBg from "./assets/manpower.jpg";
 
 export default function ManpowerOrg() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scale, setScale] = useState(1);
+  const wrapperRef = useRef(null);
+  const treeRef = useRef(null);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (wrapperRef.current && treeRef.current) {
+        // Temporarily reset zoom to measure natural width
+        treeRef.current.style.zoom = "1";
+        const availableWidth = wrapperRef.current.clientWidth - 40; // 40px for some padding
+        const treeWidth = treeRef.current.scrollWidth;
+        
+        // On mobile/tablet, keep it relatively large so it's readable and allow scrolling
+        if (window.innerWidth < 1024) {
+          setScale(0.7);
+        } else if (treeWidth > availableWidth) {
+          setScale(availableWidth / treeWidth);
+        } else {
+          setScale(1);
+        }
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    
+    // Check again after fonts/layout settle
+    setTimeout(updateScale, 100);
+    setTimeout(updateScale, 500);
+
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
 
   const NAV_LINKS = [
     { label: "Home", href: "/" },
@@ -68,12 +100,8 @@ export default function ManpowerOrg() {
           display: inline-block;
           white-space: nowrap;
           min-width: min-content;
+          transition: zoom 0.2s ease-out;
         }
-        
-        @media (max-width: 1250px) { .tree { zoom: 0.85; } }
-        @media (max-width: 1050px) { .tree { zoom: 0.75; } }
-        @media (max-width: 850px) { .tree { zoom: 0.65; } }
-        @media (max-width: 650px) { .tree { zoom: 0.55; } }
 
         .tree ul {
           padding-top: 12px;
@@ -288,7 +316,7 @@ export default function ManpowerOrg() {
         </div>
       </section>
 <section style={{ padding: "50px 24px", background: "transparent" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ maxWidth: "100%", padding: "0 20px", margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <div className="badge">Structure</div>
@@ -298,84 +326,39 @@ export default function ManpowerOrg() {
           </AnimSection>
 
           <AnimSection delay={150}>
-<div className="org-chart-wrapper">
-              <div className="tree">
+            <div className="org-chart-wrapper" ref={wrapperRef}>
+              <div className="tree" ref={treeRef} style={{ zoom: scale }}>
                 <ul>
                   <li>
                     <div className="node primary">M.D.</div>
                     <ul>
-                      {/* QUALITY Director branch (far left) */}
-                      <li style={{ width: "420px" }}>
+                      {/* QUALITY Director branch */}
+                      <li style={{ minWidth: "280px", paddingRight: "40px" }}>
                         <div className="node filled">QUALITY DIRECTOR</div>
                         <ul>
                           <li>
                             <div className="node">QUALITY HEAD</div>
-                            <div style={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                              
-                              {/* Gap to Row 1 */}
-                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
-                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
-                              </div>
-                              
-                              {/* Row 1 */}
-                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
-                                {/* Central Trunk for Row 1 */}
-                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
-                                
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>QA-NPD ENGINEER</div>
-                                   </div>
+                            <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
+                              <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
+                              {[
+                                "QA-NPO ENGINEER",
+                                "QA-QMS ENGINEER",
+                                "QA-CUSTOMER ENGINEER",
+                                "IGI INSPECTOR"
+                              ].map((label, i) => (
+                                <div key={i} style={{ display: "flex", alignItems: "center", marginBottom: i < 3 ? 8 : 0, position: "relative", paddingLeft: "24px" }}>
+                                  <div style={{ width: "24px", height: 0, borderTop: "1px solid #94a3b8", position: "absolute", left: 0 }}></div>
+                                  <div className="node">{label}</div>
                                 </div>
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>QA-QMS ENGINEER</div>
-                                   </div>
-                                </div>
-                              </div>
-
-                              {/* Gap to Row 2 */}
-                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
-                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
-                              </div>
-
-                              {/* Row 2 */}
-                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>QA-CUSTOMER ENGINEER</div>
-                                   </div>
-                                </div>
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>IGI INSPECTOR</div>
-                                   </div>
-                                </div>
-                              </div>
-
+                              ))}
                             </div>
                           </li>
                         </ul>
                       </li>
 
+                      {/* MFG & OPRS AGM branch */}
                       <li>
-                        <div className="node filled">MARKETING AND OPERATIONS</div>
+                        <div className="node filled">MFG & OPRS AGM</div>
                         <ul>
                           <li>
                             <div className="node">HR HEAD</div>
@@ -390,96 +373,81 @@ export default function ManpowerOrg() {
                             </ul>
                           </li>
                           <li><div className="node">PURCHASE HEAD</div></li>
-                          <li>
-                            <div className="node">DEVELOPMENT HEAD</div>
-                            <ul>
-                              <li><div className="node">MECHANICAL QA ENGINEER</div></li>
-                              <li><div className="node">MECHANICAL ENGINEER</div></li>
-                            </ul>
-                          </li>
-                          <li>
-                            <div className="node">SMT HEAD</div>
-                            <div style={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                              
-                              {/* Gap to Row 1 */}
-                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
-                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
-                              </div>
-                              
-                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
-                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
-                                
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>SMT TEAM LEADER 1</div>
-                                   </div>
+                          <li style={{ minWidth: "220px", paddingRight: "30px" }}>
+                            <div className="node">MI HEAD</div>
+                            <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
+                              <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
+                              {[
+                                "MI TEAM LEADER",
+                                "MI TEAM LEADER 2"
+                              ].map((label, i) => (
+                                <div key={i} style={{ display: "flex", alignItems: "center", marginBottom: i < 1 ? 8 : 0, position: "relative", paddingLeft: "24px" }}>
+                                  <div style={{ width: "24px", height: 0, borderTop: "1px solid #94a3b8", position: "absolute", left: 0 }}></div>
+                                  <div className="node">{label}</div>
                                 </div>
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>SMT TEAM LEADER 2</div>
-                                   </div>
-                                </div>
-                              </div>
-
-                              {/* Gap to Row 2 */}
-                              <div style={{ width: "100%", height: "12px", position: "relative" }}>
-                                <div style={{ position: "absolute", top: 0, left: "50%", marginLeft: "-1px", width: 0, height: "100%", borderLeft: "1px solid #94a3b8", zIndex: 0 }}></div>
-                              </div>
-
-                              {/* Row 2 */}
-                              <div style={{ display: "flex", width: "100%", position: "relative", justifyContent: "center" }}>
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>SMT TEAM LEADER 3</div>
-                                   </div>
-                                </div>
-                                <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center" }}>
-                                   {/* Horizontal line */}
-                                   <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: 0, borderTop: "1px solid #94a3b8" }}></div>
-                                   {/* Drop */}
-                                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", position: "relative", zIndex: 1 }}>
-                                      <div style={{ width: 0, height: "12px", borderLeft: "1px solid #94a3b8" }}></div>
-                                      <div className="node" style={{ margin: "0 5px" }}>PPC ENGINEER</div>
-                                   </div>
-                                </div>
-                              </div>
-
+                              ))}
                             </div>
                           </li>
-                          <li>
+                          <li style={{ minWidth: "260px", paddingRight: "30px" }}>
+                            <div className="node">DEVELOPMENT HEAD</div>
+                            <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
+                              <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
+                              {[
+                                "MECHANICAL QA ENGINEER",
+                                "MECHANICAL ENGINEER"
+                              ].map((label, i) => (
+                                <div key={i} style={{ display: "flex", alignItems: "center", marginBottom: i < 1 ? 8 : 0, position: "relative", paddingLeft: "24px" }}>
+                                  <div style={{ width: "24px", height: 0, borderTop: "1px solid #94a3b8", position: "absolute", left: 0 }}></div>
+                                  <div className="node">{label}</div>
+                                </div>
+                              ))}
+                            </div>
+                          </li>
+                          <li style={{ minWidth: "260px", paddingRight: "40px" }}>
+                            <div className="node">SMT HEAD</div>
+                            <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
+                              <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
+                              {[
+                                "SMT TEAM LEADER 1",
+                                "SMT TEAM LEADER 2",
+                                "SMT TEAM LEADER 3",
+                                "PPC ENGINEER"
+                              ].map((label, i) => (
+                                <div key={i} style={{ display: "flex", alignItems: "center", marginBottom: i < 3 ? 8 : 0, position: "relative", paddingLeft: "24px" }}>
+                                  <div style={{ width: "24px", height: 0, borderTop: "1px solid #94a3b8", position: "absolute", left: 0 }}></div>
+                                  <div className="node">{label}</div>
+                                </div>
+                              ))}
+                            </div>
+                          </li>
+                          <li style={{ minWidth: "260px", paddingRight: "30px" }}>
                             <div className="node">MAINTENANCE HEAD</div>
-                            <ul>
-                              <li><div className="node">MAINTENANCE EXECUTIVE</div></li>
-                              <li><div className="node">IT EXECUTIVE</div></li>
-                            </ul>
+                            <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
+                              <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
+                              {[
+                                "MAINTENANCE EXECUTIVE",
+                                "IT EXECUTIVE"
+                              ].map((label, i) => (
+                                <div key={i} style={{ display: "flex", alignItems: "center", marginBottom: i < 1 ? 8 : 0, position: "relative", paddingLeft: "24px" }}>
+                                  <div style={{ width: "24px", height: 0, borderTop: "1px solid #94a3b8", position: "absolute", left: 0 }}></div>
+                                  <div className="node">{label}</div>
+                                </div>
+                              ))}
+                            </div>
                           </li>
                         </ul>
                       </li>
 
-                      {/* R&D and ACCOUNTS grouped to perfectly balance the Quality branch width */}
-                      <li style={{ width: "420px", paddingTop: 0 }}>
-                        <ul style={{ padding: 0, display: "flex", justifyContent: "center" }}>
-                          <li>
-                            <div className="node filled">R & D DIRECTOR</div>
-                          </li>
-                          <li>
-                            <div className="node filled">ACCOUNTS MANAGER</div>
-                            <ul>
-                              <li><div className="node">ACCOUNTS EXECUTIVE</div></li>
-                            </ul>
-                          </li>
+                      {/* R&D Director branch */}
+                      <li>
+                        <div className="node filled">R & D DIRECTOR</div>
+                      </li>
+
+                      {/* ACCOUNTS branch */}
+                      <li>
+                        <div className="node filled">ACCOUNTS MANAGER</div>
+                        <ul>
+                          <li><div className="node">ACCOUNTS EXECUTIVE</div></li>
                         </ul>
                       </li>
                     </ul>

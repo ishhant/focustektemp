@@ -194,3 +194,25 @@ footer {
 }
 .hide-on-mobile { display: block; }
 @media (max-width: 768px) { .hide-on-mobile { display: none !important; } }
+
+@media (max-width: 768px) {
+  section[style*="100vh"]:not(#home-hero) {
+    height: 450px !important;
+    min-height: 450px !important;
+    max-height: 450px !important;
+    background-attachment: scroll !important;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+    background-position: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+  
+  #home-hero {
+    background-attachment: scroll !important;
+  }
+}
+
+

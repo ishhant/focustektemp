@@ -36,7 +36,7 @@ const SMT_CONFIGURATIONS = [
     title: "SMT Line 1",
     machines: [
       "PCB LOADER & PCB CLEANER",
-      "PANASONIC SPG",
+      "PANASONIC SPI WITH AUTOMATIC SOLDER PASTE DISPENDING",
       "KOH YOUNG KY8030-2 -SPI",
       "PANASONIC NPM-D3",
       "PANASONIC NPM-W2",
@@ -140,7 +140,7 @@ export default function SmtProduction() {
               marginBottom: 20,
               textShadow: "0 4px 16px rgba(0, 0, 0, 0.4)"
             }}>
-              SMT Production Lines
+              SMT Production <span style={{ color: "#60a5fa" }}>Lines</span>
             </h1>
             <p style={{
               fontSize: 18, 

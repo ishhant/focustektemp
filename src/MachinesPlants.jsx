@@ -35,20 +35,22 @@ import waveImg from "./assets/machines/wave.jpeg";
 import o2Img from "./assets/machines/o2.jpeg";
 import noncontactImg from "./assets/machines/3dm.jpg";
 import dustmeterImg from "./assets/machines/dustmeter.jpg";
-
+import solderImg from "./assets/machines/solder.jpg";
+import heightImg from "./assets/machines/height.jpg";
 
 
 
 const SMT_PROCESS = [
   { img: printerMachineImg, title: "PANASONIC SPG/NM-EJ6A PRINTER" },
-  { img: spiImg, title: "KOHYOUNG KY8030-2  SPI" },
   { img: npmw2Img, title: "PANASONIC NPM W2" },
   { img: am100Img, title: "PANASONIC  NM-EJM4D /AM100 MOUNTER" },
   { img: hellerImg, title: "HELLER 1910MKV-DL REFLOW" },
   { img: aoiImg, title: "KOHYOUNG ZENITH  INLINE 3D AOI" },
   { img: hanwaImg, title: "HANAWHA SM-482" },
-  { img: xrayImg, title: "XAVIS X-ray Xscan-A100R" },
+  { img: xrayImg, title: "XAVIS X-RAY XSCAN-A100R" },
   { img: testerImg, title: "IN CIRCUIT TESTER  ST623F" },
+  { img: reflowImg, title: "KIC START REFLOW PROFILER" },
+  { img: o2Img, title: "O2 PROFILER" },
 ];
 
 const AUTO_INSERTION = [
@@ -86,11 +88,6 @@ const INSPECTION_TOOLS = [
     title: "WAVE CHECKER", 
     desc: "" 
   },
-  { 
-    img: o2Img, 
-    title: "O2 PROFILER", 
-    desc: "" 
-  },
 ];
 
 const SPECIAL_TOOLS = [
@@ -117,10 +114,6 @@ const SPECIAL_TOOLS = [
     title: "X-RAY COMPONENT COUNTING MACHINE",
   },
   { 
-    img: reflowImg, 
-    title: "KIC START REFLOW PROFILER",
-  },
-  { 
     img: noncontactImg, 
     title: "NON CONTACT 3D MEASURING SYSTEM",
   },
@@ -128,9 +121,18 @@ const SPECIAL_TOOLS = [
     img: dustmeterImg, 
     title: "DUST METER XTECH VPC300",
   },
-
-
-
+  { 
+    img: spiImg, 
+    title: "KOHYOUNG KY8030-2 3D SPI",
+  },
+  { 
+    img: solderImg, 
+    title: "Solder Paste Thawing Machine",
+  },
+  { 
+    img: heightImg, 
+    title: "Mitutoyo Height Gage",
+  },
 ];
 
 

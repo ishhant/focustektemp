@@ -204,7 +204,7 @@ export default function Home() {
         }
       `}</style>
       <Navbar activePage="Home" />
-      <section style={{ 
+      <section id="home-hero" style={{ 
         minHeight: "100vh", 
         display: "flex",    
         flexDirection: "column",
@@ -537,16 +537,17 @@ export default function Home() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             
-            <div style={{ width: "100%", background: "#000", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "100%", background: "#000" }}>
+              <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
                 <iframe 
                   src="https://player.vimeo.com/video/1209006092?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&quality=720p" 
-                  width="100%" 
-                  style={{ aspectRatio: "16/9", maxWidth: "1280px" }}
                   frameBorder="0" 
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
                   title="Focustek_video"
                 ></iframe>
+              </div>
             </div>
           </div>
         </div>

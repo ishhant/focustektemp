@@ -56,7 +56,7 @@ function CertificateCard({ cert, onImageClick }) {
           <img 
             src={cert.images[currentIndex]} 
             alt={`${cert.title} - Page ${currentIndex + 1}`} 
-            style={{ width: "100%", height: "400px", objectFit: "contain", display: "block", cursor: "zoom-in" }} 
+            style={{ width: "100%", height: "400px", objectFit: "cover", display: "block", cursor: "zoom-in" }} 
             onClick={() => onImageClick(cert.images[currentIndex])}
           />
           
@@ -118,8 +118,30 @@ export default function QualityCertificate() {
     { id: 7, title: "MSME CERTIFICATE", images: [cert5_1,cert5_2] },
     { id: 9, title: "MARUTI SUZUKI TIER-2 VENDOR ASSESSMENT", images: [cert9] },
 
-
   ];
+
+  const handlePrint = (e, src) => {
+    e.stopPropagation();
+    const printWindow = window.open('', '_blank');
+    if (printWindow) {
+      printWindow.document.write(`
+        <html>
+          <head><title> </title>
+            <style>
+              @page { margin: 0; }
+              * { margin: 0; padding: 0; }
+              html, body { width: 100%; height: 100%; overflow: hidden; }
+              img { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: contain; }
+            </style>
+          </head>
+          <body>
+            <img src="${src}" onload="setTimeout(function(){ window.print(); window.close(); }, 200);" />
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+    }
+  };
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8f9fa", color: "#051226", minHeight: "100vh" }}>
@@ -150,6 +172,25 @@ export default function QualityCertificate() {
           />
           <button 
             style={{
+              position: "absolute", top: "24px", right: "80px",
+              background: "rgba(255,255,255,0.2)", border: "none", color: "#fff",
+              width: "44px", height: "44px", borderRadius: "50%",
+              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+              transition: "background 0.2s"
+            }}
+            onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.3)"}
+            onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.2)"}
+            onClick={(e) => handlePrint(e, lightboxImg)}
+            title="Print Certificate"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+          </button>
+          <button 
+            style={{
               position: "absolute", top: "24px", right: "24px",
               background: "rgba(255,255,255,0.2)", border: "none", color: "#fff",
               width: "44px", height: "44px", borderRadius: "50%",
@@ -159,6 +200,7 @@ export default function QualityCertificate() {
             onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.3)"}
             onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.2)"}
             onClick={(e) => { e.stopPropagation(); setLightboxImg(null); setIsZoomed(false); }}
+            title="Close"
           >
             &times;
           </button>

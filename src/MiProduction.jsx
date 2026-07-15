@@ -51,7 +51,7 @@ export default function MiProduction() {
               marginBottom: 20,
               textShadow: "0 4px 16px rgba(0, 0, 0, 0.4)"
             }}>
-              MI Production Line
+              MI Production <span style={{ color: "#60a5fa" }}>Lines</span>
             </h1>
             <p style={{
               fontSize: 18, 
