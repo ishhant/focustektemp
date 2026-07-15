@@ -35,8 +35,8 @@ import waveImg from "./assets/machines/wave.jpeg";
 import o2Img from "./assets/machines/o2.jpeg";
 import noncontactImg from "./assets/machines/3dm.jpg";
 import dustmeterImg from "./assets/machines/dustmeter.jpg";
-import solderImg from "./assets/machines/solder.jpg";
-import heightImg from "./assets/machines/height.jpg";
+import solderImg from "./assets/machines/SOLDER.jpg";
+import heightImg from "./assets/machines/HEIGHT.jpg";
 
 
 
