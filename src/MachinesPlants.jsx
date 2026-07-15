@@ -217,7 +217,7 @@ export default function MachinesPlants() {
               <AnimSection key={i} delay={i * 80}>
                 <div className="card" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                   <div style={{ 
-                    width: "100%", aspectRatio: "4 / 3", borderRadius: "12px", overflow: "hidden", 
+                    width: "100%", aspectRatio: "4 / 3", maxHeight: 300, borderRadius: "12px", overflow: "hidden", 
                     background: "var(--blue-light)", marginBottom: 20, display: "flex", alignItems: "center", justifyContent: "center"
                   }}>
                     <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
@@ -250,7 +250,7 @@ export default function MachinesPlants() {
               <AnimSection key={i} delay={i * 80}>
                 <div className="card" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                   <div style={{ 
-                    width: "100%", aspectRatio: "4 / 3", borderRadius: "12px", overflow: "hidden", 
+                    width: "100%", aspectRatio: "4 / 3", maxHeight: 300, borderRadius: "12px", overflow: "hidden", 
                     background: "var(--blue-light)", marginBottom: 20, display: "flex", alignItems: "center", justifyContent: "center"
                   }}>
                     <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
@@ -283,7 +283,7 @@ export default function MachinesPlants() {
               <AnimSection key={i} delay={i * 80}>
                 <div style={{ 
                   width: "100%", 
-                  aspectRatio: "4 / 3", 
+                  aspectRatio: "4 / 3", maxHeight: 300, 
                   borderRadius: "16px", 
                   overflow: "hidden", 
                   border: "1px solid var(--border)",
@@ -325,7 +325,7 @@ export default function MachinesPlants() {
               <AnimSection key={i} delay={i * 80}>
                 <div className="card" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                   <div style={{ 
-                    width: "100%", aspectRatio: "4 / 3", borderRadius: "12px", overflow: "hidden", 
+                    width: "100%", aspectRatio: "4 / 3", maxHeight: 300, borderRadius: "12px", overflow: "hidden", 
                     background: "var(--blue-light)", marginBottom: 20, display: "flex", alignItems: "center", justifyContent: "center"
                   }}>
                     <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
@@ -355,7 +355,7 @@ export default function MachinesPlants() {
               <AnimSection key={i} delay={i * 80}>
                 <div className="card" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
                   <div style={{ 
-                    width: "100%", aspectRatio: "4 / 3", borderRadius: "12px", overflow: "hidden", 
+                    width: "100%", aspectRatio: "4 / 3", maxHeight: 300, borderRadius: "12px", overflow: "hidden", 
                     background: "var(--blue-light)", marginBottom: 20, display: "flex", alignItems: "center", justifyContent: "center"
                   }}>
                     <img src={item.img} alt={item.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />

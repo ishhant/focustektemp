@@ -208,14 +208,21 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ── RESPONSIVE UTILITIES ── */
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+}
 @media (max-width: 768px) {
   .hide-mobile { display: none !important; }
   .show-mobile { display: inline-block !important; }
+}
+@media (max-width: 600px) {
   .grid-2 { grid-template-columns: 1fr !important; }
   .grid-3 { grid-template-columns: 1fr !important; }
-  .grid-4 { grid-template-columns: 1fr 1fr !important; }
+  .grid-4 { grid-template-columns: 1fr !important; }
   .hero-btns { flex-direction: column !important; align-items: stretch !important; }
   .hero-btns a, .hero-btns button { text-align: center; justify-content: center; }
   .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
   .whatsapp-icon { width: 26px; height: 26px; }
 }
+
