@@ -204,7 +204,7 @@ export default function Home() {
         }
       `}</style>
       <Navbar activePage="Home" />
-      <section id="home-hero" style={{ 
+      <section style={{ 
         minHeight: "100vh", 
         display: "flex",    
         flexDirection: "column",

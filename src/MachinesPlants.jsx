@@ -54,9 +54,9 @@ const SMT_PROCESS = [
 ];
 
 const AUTO_INSERTION = [
-  { img: sequencerImg, title: "SEQUENCER", desc: "Dynapert UCSM-G" },
-  { img: axialImg, title: "AXIAL", desc: "Dynapert VCD-G" },
-  { img: radialImg, title: "RADIAL", desc: "Pansert RH8" },
+  { img: sequencerImg, title: "SEQUENCER", desc: "DYNAPERT UCSM-G" },
+  { img: axialImg, title: "AXIAL", desc: "DYNAPERT VCD-G" },
+  { img: radialImg, title: "RADIAL", desc: "PANSERT RH8" },
     { img: universalImg, title: "VCD AND SEQUENCER", desc: "" },
 
 ];
@@ -80,7 +80,7 @@ const INSPECTION_TOOLS = [
   },
   { 
     img: digitizerImg, 
-    title: "FUJI DT III Digitizer", 
+    title: "FUJI DT III DIGITIZER", 
     desc: "" 
   },
   { 
@@ -93,12 +93,12 @@ const INSPECTION_TOOLS = [
 const SPECIAL_TOOLS = [
   { 
     img: hydraulicImg, 
-    title: "Hydraulic Press", 
+    title: "HYDRAULIC PRESS", 
     desc: "" 
   },
   { 
     img: routerImg, 
-    title: "Router Machine", 
+    title: "ROUTER MACHINE", 
     desc: "" 
   },
   { 
@@ -127,11 +127,11 @@ const SPECIAL_TOOLS = [
   },
   { 
     img: solderImg, 
-    title: "Solder Paste Thawing Machine",
+    title: "SOLDER PASTE THAWING MACHINE",
   },
   { 
     img: heightImg, 
-    title: "Mitutoyo Height Gage",
+    title: "MITUTOYO HEIGHT GAGE",
   },
 ];
 
