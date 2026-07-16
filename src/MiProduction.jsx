@@ -17,9 +17,9 @@ const MI_CAPACITY = [
     title: "Total Capacity Minimum",
     subtitle: "(Per Month)",
     lines: [
-      { name: "ROHS Line 1", value: "400000", unit: "CPH / Month" },
-      { name: "ROHS Line 2", value: "400000", unit: "CPH / Month" },
-      { name: "ROHS Line 3", value: "250000", unit: "CPH / Month" }
+      { name: "ROHS Line 1", value: "4 M+", unit: "Components / Month" },
+      { name: "ROHS Line 2", value: "4 M+", unit: "Components / Month" },
+      { name: "ROHS Line 3", value: "2.5 M+", unit: "Components / Month" }
     ]
   }
 ];

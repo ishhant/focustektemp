@@ -111,6 +111,7 @@ export default function Footer() {
                 <a href="tel:01244282696" className="footer-link">Tel: 0124-4282696</a>
                 <a href="tel:+919311143461" className="footer-link">Mob: +91 9311143461</a>
                 <a href="mailto:contact@focustek.co.in" className="footer-link">contact@focustek.co.in</a>
+                <a href="mailto:marketing@focustek.co.in" className="footer-link">marketing@focustek.co.in</a>
               </div>
             </div>
 
