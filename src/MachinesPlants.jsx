@@ -88,6 +88,10 @@ const INSPECTION_TOOLS = [
     title: "WAVE CHECKER", 
     desc: "" 
   },
+  { 
+    img: spiImg, 
+    title: "KOHYOUNG KY8030-2 3D SPI",
+  },
 ];
 
 const SPECIAL_TOOLS = [
@@ -121,10 +125,7 @@ const SPECIAL_TOOLS = [
     img: dustmeterImg, 
     title: "DUST METER XTECH VPC300",
   },
-  { 
-    img: spiImg, 
-    title: "KOHYOUNG KY8030-2 3D SPI",
-  },
+  
   { 
     img: solderImg, 
     title: "SOLDER PASTE THAWING MACHINE",

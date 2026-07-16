@@ -17,8 +17,9 @@ const MI_CAPACITY = [
     title: "Total Capacity Minimum",
     subtitle: "(Per Month)",
     lines: [
-      { name: "ROHS Line 1", value: "2138400", unit: "CPH / Month" },
-      { name: "ROHS Line 2", value: "2138400", unit: "CPH / Month" }
+      { name: "ROHS Line 1", value: "400000", unit: "CPH / Month" },
+      { name: "ROHS Line 2", value: "400000", unit: "CPH / Month" },
+      { name: "ROHS Line 3", value: "250000", unit: "CPH / Month" }
     ]
   }
 ];
@@ -93,7 +94,7 @@ export default function MiProduction() {
               zIndex: 10
             }}>
               <div style={{ flex: "1 1 200px" }}>
-                <div style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", lineHeight: 1 }}>2</div>
+                <div style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", lineHeight: 1 }}>3</div>
                 <div style={{ fontSize: 16, fontWeight: 700, color: "var(--dark)", marginTop: 12 }}>Production Lines</div>
                 <div style={{ fontSize: 14, color: "var(--gray)", marginTop: 4 }}>High-efficiency setups</div>
               </div>
@@ -101,16 +102,16 @@ export default function MiProduction() {
               <div className="hide-on-mobile" style={{ width: 1, height: 60, background: "var(--border)" }}></div>
 
               <div style={{ flex: "1 1 200px" }}>
-                <div style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", lineHeight: 1 }}>2</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "var(--dark)", marginTop: 12 }}>Operating Shifts</div>
+                <div style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", lineHeight: 1 }}>1</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: "var(--dark)", marginTop: 12 }}>Operating Shift</div>
                 <div style={{ fontSize: 14, color: "var(--gray)", marginTop: 4 }}>Capable of running 2 shifts</div>
               </div>
 
               <div className="hide-on-mobile" style={{ width: 1, height: 60, background: "var(--border)" }}></div>
 
               <div style={{ flex: "1 1 200px" }}>
-                <div style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", lineHeight: 1 }}>1M+</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: "var(--dark)", marginTop: 12 }}>PCA / Month</div>
+                <div style={{ fontSize: "2.5rem", fontWeight: 800, color: "var(--accent)", lineHeight: 1 }}>2M+</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: "var(--dark)", marginTop: 12 }}>PCBA / Month</div>
                 <div style={{ fontSize: 14, color: "var(--gray)", marginTop: 4 }}>Based on 280mm width board</div>
               </div>
             </div>
