@@ -341,7 +341,7 @@ export default function ManpowerOrg() {
                             <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
                               <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
                               {[
-                                "QA-NPO ENGINEER",
+                                "QA-NPD ENGINEER",
                                 "QA-QMS ENGINEER",
                                 "QA-CUSTOMER ENGINEER",
                                 "IGI INSPECTOR"
@@ -389,7 +389,7 @@ export default function ManpowerOrg() {
                             </div>
                           </li>
                           <li style={{ minWidth: "260px", paddingRight: "30px" }}>
-                            <div className="node">DEVELOPMENT HEAD</div>
+                            <div className="node">VENDER DEVELOPMENT HEAD</div>
                             <div style={{ marginLeft: "50%", position: "relative", paddingTop: "12px" }}>
                               <div style={{ position: "absolute", top: 0, left: 0, width: 0, height: "calc(100% - 14px)", borderLeft: "1px solid #94a3b8" }}></div>
                               {[
@@ -440,7 +440,7 @@ export default function ManpowerOrg() {
 
                       {/* R&D Director branch */}
                       <li>
-                        <div className="node filled">R & D DIRECTOR</div>
+                        <div className="node filled">DEVELOPMENT DIRECTOR</div>
                       </li>
 
                       {/* ACCOUNTS branch */}
